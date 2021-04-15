@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcomponents</title>
+    <style>
+        :root {
+            --primary-color1: #E63027;
+            --primary-color2: #004691;
+            --primary-color3: #E63027;
+            --secondary-color1: #E63027;
+            --secondary-color2: #004691;
+            --secondary-color3: #E63027;
+            --text-color1: #444444;
+            --text-color2: #5C5C5C;
+            --text-color3: #959595;
+            --tex-color-disabled: #E0E0E0;
+            --alert-border-radius: 4px;
+            --alert-background-color: #ffffff;
+            --alert-text-color: #444444;
+            --alert-background-color-error: #E63027;
+            --alert-border-color-error: rgba(230, 48, 39, 0.25);
+            --alert-icon-color-error: #ffffff;
+            --alert-background-color-info: #ECBA18;
+            --alert-border-color-info: rgba(236, 186, 24, 0.25);
+            --alert-icon-color-info: #444444;
+            --alert-background-color-success: #004691;
+            --alert-border-color-success: rgba(0, 70, 145, 0.25);
+            --alert-icon-color-success: #ffffff;
+            --button-primary-text-color: #ffffff;
+            --button-primary-background-color: #E63027;
+            --button-primary-background-color-hover: #AB1114;
+            --button-primary-text-color-hover: #ffffff;
+            --button-primary-background-color-disabled: #F5F5F5;
+            --button-primary-border: 1px solid #E63027;
+            --button-outline-border: 1px solid #E63027;
+            --button-outline-background-color: transparent;
+            --button-outline-text-color: #E63027;
+            --button-border-disabled: 1px solid #E0E0E0;
+            --button-action-background-color: #ffffff;
+            --button-action-border-radius: 16px;
+            --button-action-border: 16px;
+            --button-action-text-color: #E63027;
+            --button-action-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+            --button-action-background-color-active: #AB1114;
+            --button-action-text-color-active: #ffffff;
+            --button-carousel-active-background-color: #E63027;
+            --button-radius: 4px;
+            --input-radius: 4px;
+            --input-border-inactive: 1px solid #E0E0E0;
+            --input-border-focused: 1px solid #004691;
+            --input-box-shadow-focus: 0 0 4px #00469166;
+            --input-border-color-error: 1px solid #E63027;
+            --input-background-color: #ffffff;
+            --input-text-color-error: #E63027;
+            --label-background-color: #ffffff;
+            --carousel-nav-border-radius: 4px;
+            --carousel-nav-color: #004691;
+            --price-color: #E63027;
+            --old-price-color: #5C5C5C;
+            --left-search-arrow: 0;
+            --categories-width: 20%;
+            --colorbox-miniCart: auto;
+            --field-color-success: #004691;
+            --field-color-error: #E63027;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            color: var(--text-color);
+            font-family: Arial;
+            font-size: var(--font-base, 14px);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+        }
+
+        h1~*,
+        h2~*,
+        h3~*,
+        h4~*,
+        h5~*,
+        h6~*,
+        p~* {
+            margin-top: 1em;
+        }
+
+        k-banner:is([type*=-cut]) {
+            height: 180px;
+        }
+
+        k-banner,
+        k-brand-slider,
+        k-product-container {
+            margin-bottom: 2rem;
+        }
+    </style>
+    <link rel="modulepreload" href="dist/components.js">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css" rel="stylesheet">
+    <script type="module" src="dist/components.js"></script>
+</head>
+
+<body>
+    <k-banner src="assets/images/banner-1@2x.png" type="left-cut">
+        <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
+    </k-banner>
+    <k-banner src="assets/images/banner-1@2x.png" type="right-cut">
+        <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
+    </k-banner>
+    <k-banner src="assets/images/banner-2@2x.png" type="left">
+        <h3>Conéctate desde casa</h3>
+        <p>Extensores de red, Router, cables y herramientas. <br>
+            Los mejores productos para una conectividad avanzada a solo un clic.</p>
+        <k-button type="button" btn-style="outline" href="#">Ver todos los productos</k-button>
+    </k-banner>
+    <k-banner src="assets/images/banner-2@2x.png" type="right">
+        <h3>Conéctate desde casa</h3>
+        <p>Extensores de red, Router, cables y herramientas. <br>
+            Los mejores productos para una conectividad avanzada a solo un clic.</p>
+        <k-button type="button" btn-style="outline" href="#">Ver todos los productos</k-button>
+    </k-banner>
+    <k-banner src="assets/images/banner-3@2x.png" type="full">
+        <p>Déjate sorprender por Ktronix, un espectáculo de conectividad y emoción.</p>
+        <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
+        <k-button type="button">Ver todos los productos</k-button>
+    </k-banner>
+    <k-slider>
+        <div class="slide">
+            <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        </div>
+        <div class="slide">
+            <img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        </div>
+    </k-slider>
+    <k-slider>
+        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        </div>
+        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        </div>
+    </k-slider>
+    <k-product-container desktop="3">
+        <k-card is="product-item">
+            <img loading="lazy" src="assets/images/product-1@2x.png" alt="Lavadoras y secadores">
+            <h3>Lavadoras y secadores</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+            <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
+        </k-card>
+        <k-card is="product-item">
+            <img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina">
+            <h3>Cocina</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+            <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
+        </k-card>
+        <k-card is="product-item">
+            <img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización">
+            <h3>Climatización</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+            <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
+        </k-card>
+    </k-product-container>
+</body>
+
+</html>
