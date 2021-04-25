@@ -14,14 +14,6 @@ export class Button extends LitElement {
     static get styles() {
         return css`
             :host {
-                box-sizing: border-box;
-                display: inline-flex;
-                cursor: pointer;
-                font-family: var(--font-family, 'Arial');
-                outline: none;
-                width: auto;
-            }
-            a {
                 align-items: center;
                 background-color: var(--button-primary-background-color, #E63027);
                 border: var(--button-primary-border, 1px solid #E63027);
@@ -29,8 +21,8 @@ export class Button extends LitElement {
                 box-sizing: border-box;
                 color: var(--button-primary-text-color, #ffffff);
                 cursor: pointer;
-                display: flex;
-                flex: 1;
+                display: inline-flex;
+                font-family: var(--font-family, 'Arial');
                 font-size: 1rem;
                 font-weight: bold;
                 justify-content: center;
@@ -41,36 +33,35 @@ export class Button extends LitElement {
                 text-align: center;
                 text-decoration: none;
                 transition: ease-in-out .3s all;
-                width: 100%;
+                width: auto;
             }
-            :host([variant=outline]) a {
+            :host([variant=outline]) {
                 background-color: var(--button-outline-background-color, transparent);
                 border: var(--button-outline-border,1px solid #E63027);
                 color: var(--button-outline-text-color, #E63027);
             }
-            :host(:focus) a,
-            :host(:hover) a,
-            a:focus,
-            a:hover,
-            :host([variant=outline]) a:focus,
-            :host([variant=outline]) a:hover {
+            :host(:focus),
+            :host(:hover),
+            :host([variant=outline]:focus),
+            :host([variant=outline]:hover) {
                 background-color: var(--button-primary-background-color-hover, #AB1114);
                 border-color: var(--button-primary-background-color-hover, #AB1114);
             }
-            :host([variant=outline]:focus) a,
-            :host([variant=outline]:hover) a,
-            :host([variant=outline]) a:focus,
-            :host([variant=outline]) a:hover {
+            :host([variant=outline]:focus),
+            :host([variant=outline]:hover) {
                 color: var(--button-primary-text-color-hover, #ffffff);
             }
         `;
     }
     constructor() {
         super();
+        this.disabled = false;
         this.href = '';
         this.loaded = false;
-        this.target = '';
+        this.icon = '';
+        this.target = '_self';
         this.variant = 'primary';
+        this.addEventListener('click', this._handleClick);
     }
     attributeChangedCallback(name, oldval, newval) {
         super.attributeChangedCallback(name, oldval, newval);
@@ -78,8 +69,10 @@ export class Button extends LitElement {
     }
     render() {
         this.loaded = true;
-        return html`<a href="${this.href}" target="${this.target}">
-            <slot class="content"></slot>
-        </a>`;
+        return html`<slot class="content"></slot>`;
+    }
+    _handleClick() {
+        if (this.href === '') return;
+        return window.open(this.href, this.target);
     }
 }

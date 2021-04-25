@@ -6,22 +6,27 @@ import { Theme as themeStyles} from './css/theme.js';
 export class Slider extends LitElement {
     static get properties() {
         return {
-            'desktop-items': { type: Number, reflect: true },
-            'items-space': { type: Number, reflect: true },
+            'desktop-arrows': { type: Number },
+            'desktop-bullets': { type: Number },
+            'desktop-items': { type: Number },
+            'items-space': { type: Number },
             loaded: { type: Boolean, reflect: true },
-            'mobile-items': { type: Number, reflect: true },
-            width: { type: Number, reflect: true }
+            'mobile-arrows': { type: Number },
+            'mobile-bullets': { type: Number },
+            'mobile-items': { type: Number },
+            peek: { type: Number },
+            width: { type: Number }
         };
     }
     static get styles() {
         return [
             css`:host {
+                background-color: var(--k-slider-background-color, #fff);
                 display: flex;
                 flex: 1;
                 flex-wrap: no-wrap;
                 justify-content: center;
-                margin: 0 auto;
-                padding: 0 1rem;
+                margin: 0 auto 2rem;
             }`,
             coreStyles,
             themeStyles
@@ -29,10 +34,15 @@ export class Slider extends LitElement {
     }
     constructor() {
         super();
+        this['desktop-arrows'] = false;
+        this['desktop-bullets'] = false;
         this['desktop-items'] = 6;
         this['items-space'] = 16;
         this.loaded = false;
+        this['mobile-arrows'] = false;
+        this['mobile-bullets'] = false;
         this['mobile-items'] = 2;
+        this.peek = 0;
         this.width = 1204;
     }
     attributeChangedCallback(name, oldval, newval) {
@@ -87,7 +97,7 @@ export class Slider extends LitElement {
             },
             gap: this['items-space'],
             type: 'carousel',
-            peek: 100,
+            peek: this.peek,
             perView: this['desktop-items'],
             breakpoints: {
                 768: {

@@ -16,6 +16,7 @@ export class Banner extends LitElement {
                 font-family: var(--font-family, 'Arial');
                 font-size: var(--font-base, 14px);
                 justify-content: center;
+                margin-bottom: 2rem;
                 overflow: hidden;
             }
             :host([type=full]) .container {
@@ -54,9 +55,6 @@ export class Banner extends LitElement {
                 font-size: var(--font-base, 14px);
                 line-height: 1.572em;
             }
-            ::slotted(* strong) {
-                color: var(--primary-color2, #004691);
-            }
             .container {
                 display: flex;
                 flex: 1;
@@ -66,7 +64,7 @@ export class Banner extends LitElement {
                 max-width: 1204px;
             }
             section,
-            slot {
+            .content {
                 align-items: center;
                 display: flex;
             }

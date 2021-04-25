@@ -3,7 +3,7 @@ import { LitElement, css, html } from 'lit-element';
 export class Link extends LitElement {
     static get properties() {
         return {
-            href: { type: String, reflect: true },
+            href: { type: String },
             icon: { type: String, reflect: true },
             loaded: { type: Boolean, reflect: true },
             title: { type: String },
@@ -18,11 +18,8 @@ export class Link extends LitElement {
                 display: inline-block;
             }
             a {
-                color: var(--primary-color2);
+                color: var(--primary-color2, #004691);
                 text-decoration: underline;
-            }
-            span {
-                color: var(--primary-color1);
             }
         `;
     }
@@ -41,10 +38,9 @@ export class Link extends LitElement {
     render() {
         this.loaded = true;
         const icon = (this.hasAttribute('icon')) ?
-            html`<span id="icon" class="${this.icon}"></span>` :
+            html`<k-icon icon="${this.icon}"></k-icon>` :
             '';
-        return html`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css">
-        <a href="${this.href}" target="${this.target}" title="${this.title}">
+        return html`<a href="${this.href}" target="${this.target}" title="${this.title}">
             <slot class="content"></slot>
             ${icon}
         </a>`;

@@ -1,9 +1,9 @@
 import { css } from 'lit-element';
 export const Core = css`
 .k-slider {
+    box-sizing: border-box;
     position: relative;
     width: 100%;
-    box-sizing: border-box;
 }
 .k-slider * {
     box-sizing: inherit;
@@ -12,19 +12,19 @@ export const Core = css`
     overflow: hidden;
 }
 .k-slider__slides {
-    position: relative;
-    width: 100%;
-    list-style: none;
+    align-items: stretch;
     backface-visibility: hidden;
-    transform-style: preserve-3d;
-    touch-action: pan-Y;
-    overflow: hidden;
-    padding: 0;
-    white-space: nowrap;
     display: flex;
     flex-wrap: nowrap;
+    list-style: none;
+    overflow: hidden;
+    padding: 1rem 0;
+    position: relative;
+    touch-action: pan-Y;
+    transform-style: preserve-3d;
+    width: 100%;
     will-change: transform;
-    align-items: stretch;
+    white-space: nowrap;
 }
 .k-slider__slides--dragging {
     user-select: none;

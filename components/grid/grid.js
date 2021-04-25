@@ -15,8 +15,8 @@ export class Grid extends LitElement {
                 flex: 1;
                 flex-wrap: no-wrap;
                 justify-content: center;
-                margin: 0 auto;
-                padding: 0 1rem;
+                margin: 0 auto 2rem;
+                padding: 0;
             }
             .content {
                 display: grid;
