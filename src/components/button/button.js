@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from 'lit-element';
 
 export class Button extends LitElement {
     static get properties() {
@@ -8,7 +8,7 @@ export class Button extends LitElement {
             icon: { type: String },
             target: { type: String },
             variant: { type: String }
-        }
+        };
     }
     static get styles() {
         return css`
@@ -65,14 +65,14 @@ export class Button extends LitElement {
         `;
     }
     constructor() {
-        super()
-        this.href = ""
-        this.loaded = false
-        this.target = ""
-        this.variant = "primary"
+        super();
+        this.href = '';
+        this.loaded = false;
+        this.target = '';
+        this.variant = 'primary';
     }
     render() {
-        this.loaded = true
+        this.loaded = true;
         return html`<a href="${this.href}" target="${this.target}">
             <slot class="content"></slot>
         </a>`;

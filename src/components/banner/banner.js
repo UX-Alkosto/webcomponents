@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from 'lit-element';
 
 export class Banner extends LitElement {
     static get properties() {
@@ -6,7 +6,7 @@ export class Banner extends LitElement {
             loaded: { type: Boolean, reflect: true },
             src: { type: String },
             type: { type: String }
-        }
+        };
     }
     static get styles() {
         return css`:host {
@@ -135,12 +135,12 @@ export class Banner extends LitElement {
     }
     constructor() {
         super();
-        this.src = ''
-        this.type = 'left'
-        this.loaded = false
+        this.src = '';
+        this.type = 'left';
+        this.loaded = false;
     }
     render() {
-        this.loaded = true
+        this.loaded = true;
         return html `<div class="container">
                 ${this.type == 'left' || this.type == 'left-cut' || this.type == 'full' ? this.getImage(this.src, this.type) : ''}
                 <slot class="content"></slot>

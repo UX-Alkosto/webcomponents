@@ -99,13 +99,14 @@
         p~* {
             margin-top: 1em;
         }
-
-        k-banner:is([type*=-cut]) {
-            height: 180px;
+        @media screen and (min-width: 768px){
+            k-banner:is([type*=-cut]) {
+                height: 180px;
+            }
         }
 
         k-banner,
-        k-brand-slider,
+        k-slider,
         k-product-container {
             margin-bottom: 2rem;
         }
@@ -140,46 +141,56 @@
         <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
         <k-button type="button">Ver todos los productos</k-button>
     </k-banner>
-    <k-slider>
-        <div class="slide">
+    <k-slider desktop-items="9">
+        <div class="k-slider__slide">
             <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
         </div>
-        <div class="slide">
+        <div class="k-slider__slide">
             <img loading="lazy" title="LG" src="assets/images/LG.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="LG" src="assets/images/LG.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
         </div>
     </k-slider>
-    <k-slider>
-        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+    <k-slider desktop-items="6">
+        <div class="k-slider__slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        <div class="k-slider__slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        <div class="k-slider__slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        <div class="k-slider__slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        <div class="k-slider__slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        <div class="k-slider__slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
         </div>
     </k-slider>
     <k-grid-container desktop-items="3">

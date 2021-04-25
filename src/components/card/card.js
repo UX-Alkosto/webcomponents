@@ -1,10 +1,11 @@
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from 'lit-element';
 
 export class Card extends LitElement {
     static get properties() {
         return {
+            loaded: { type: Boolean, reflect: true },
             type: { type: String }
-        }
+        };
     }
     static get styles() {
         return css`
@@ -53,10 +54,12 @@ export class Card extends LitElement {
         `;
     }
     constructor() {
-        super()
-        this.type = "default"
+        super();
+        this.type = 'default';
+        this.loaded = false;
     }
     render() {
-        return html `<slot class="content"></slot>`
+        this.loaded = true;
+        return html `<slot class="content"></slot>`;
     }
 }

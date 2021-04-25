@@ -1,9 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import alias from '@rollup/plugin-alias';
+import filesize from 'rollup-plugin-filesize';
 import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import cleanup from 'rollup-plugin-cleanup';
-import copy from 'rollup-plugin-copy';
 
 // The main JavaScript bundle for modern browsers that support
 // JavaScript modules and other ES2015+ features.
@@ -15,7 +15,6 @@ const config = {
     },
     plugins: [
         minifyHTML(),
-        copy(copyConfig),
         resolve(),
         alias({
             entries: [{
@@ -25,13 +24,22 @@ const config = {
         }),
         cleanup({
             comments: 'none'
+        }),
+        filesize({
+            showMinifiedSize: true,
+            showBrotliSize: true,
+            showGzippedSize: true
         })
     ],
     preserveEntrySignatures: false,
 };
 
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV !== 'development') {
-    config.plugins.push(terser());
+    config.plugins.push(terser({
+        module: true,
+        warnings: true
+    }));
 }
 
 export default config;
