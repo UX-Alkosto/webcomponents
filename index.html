@@ -99,21 +99,22 @@
         p~* {
             margin-top: 1em;
         }
-
-        k-banner:is([type*=-cut]) {
-            height: 180px;
+        @media screen and (min-width: 768px){
+            k-banner:is([type*=-cut]) {
+                height: 180px;
+            }
         }
 
         k-banner,
-        k-brand-slider,
+        k-slider,
         k-product-container {
             margin-bottom: 2rem;
         }
     </style>
-    <link rel="modulepreload" href="dist/components.js">
+    <link rel="modulepreload" href="./dist/components.js">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css" rel="stylesheet">
-    <script type="module" src="dist/components.js"></script>
+    <script type="module" src="./dist/components.js"></script>
 </head>
 
 <body>
@@ -127,81 +128,91 @@
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
-        <k-button type="button" btn-style="outline" href="#">Ver todos los productos</k-button>
+        <k-button type="button" variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
     <k-banner src="assets/images/banner-2@2x.png" type="right">
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
-        <k-button type="button" btn-style="outline" href="#">Ver todos los productos</k-button>
+        <k-button type="button" variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
     <k-banner src="assets/images/banner-3@2x.png" type="full">
         <p>Déjate sorprender por Ktronix, un espectáculo de conectividad y emoción.</p>
         <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
         <k-button type="button">Ver todos los productos</k-button>
     </k-banner>
-    <k-slider>
-        <div class="slide">
+    <k-slider desktop-items="9">
+        <div class="k-slider__slide">
             <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
         </div>
-        <div class="slide">
+        <div class="k-slider__slide">
             <img loading="lazy" title="LG" src="assets/images/LG.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="LG" src="assets/images/LG.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
         </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
-        </div>
-    </k-slider>
-    <k-slider>
-        <div class="slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
-        </div>
-        <div class="slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
-        </div>
-        <div class="slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
-        </div>
-        <div class="slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
-        </div>
-        <div class="slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
-        </div>
-        <div class="slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        <div class="k-slider__slide">
+            <img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
         </div>
     </k-slider>
-    <k-product-container desktop="3">
-        <k-card is="product-item">
+    <k-slider desktop-items="6">
+        <div class="k-slider__slide"><img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
+        </div>
+        <div class="k-slider__slide"><img loading="lazy" title="LG" src="assets/images/LG.svg" />
+        </div>
+        <div class="k-slider__slide"><img loading="lazy" title="Mabe" src="assets/images/mabe.svg" />
+        </div>
+        <div class="k-slider__slide"><img loading="lazy" title="Challenger" src="assets/images/challenger.svg" />
+        </div>
+        <div class="k-slider__slide"><img loading="lazy" title="Whirlpool" src="assets/images/Whirlpool.svg" />
+        </div>
+        <div class="k-slider__slide"><img loading="lazy" title="Haceb" src="assets/images/Haceb.svg" />
+        </div>
+    </k-slider>
+    <k-grid-container desktop-items="3">
+        <k-card type="product-item">
             <img loading="lazy" src="assets/images/product-1@2x.png" alt="Lavadoras y secadores">
             <h3>Lavadoras y secadores</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
-        <k-card is="product-item">
+        <k-card type="product-item">
             <img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina">
             <h3>Cocina</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
-        <k-card is="product-item">
+        <k-card type="product-item">
             <img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización">
             <h3>Climatización</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
-    </k-product-container>
+    </k-grid-container>
 </body>
 
 </html>
