@@ -20,14 +20,22 @@ export class Slider extends LitElement {
     }
     static get styles() {
         return [
-            css`:host {
-                background-color: var(--k-slider-background-color, #fff);
-                display: flex;
-                flex: 1;
-                flex-wrap: no-wrap;
-                justify-content: center;
-                margin: 0 auto 2rem;
-            }`,
+            css`
+                :host {
+                    background-color: var(--k-slider-background-color, #fff);
+                    display: flex;
+                    flex: 1;
+                    flex-wrap: no-wrap;
+                    justify-content: center;
+                    margin: 0 auto 2rem;
+                    padding: 0 1rem;
+                }
+                @media screen and (min-width: 768px) {
+                    :host {
+                        padding: 0;
+                    }
+                }
+            `,
             coreStyles,
             themeStyles
         ];
