@@ -2,13 +2,13 @@
   "name": "webcomponents",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/components.js",
-  "module": "components.js",
+  "main": "./index.js",
+  "module": "index.js",
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel watch",
     "build": "rollup -c",
-    "lint": "lit-analyzer 'src/components/**/*.js' && eslint src/ --quiet",
+    "lint": "lit-analyzer 'components/**/*.js' && eslint src/ --quiet",
     "watch": "rollup -c -w"
   },
   "dependencies": {

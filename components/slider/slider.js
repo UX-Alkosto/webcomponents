@@ -35,6 +35,18 @@ export class Slider extends LitElement {
         this['mobile-items'] = 2;
         this.width = 1204;
     }
+    attributeChangedCallback(name, oldval, newval) {
+        super.attributeChangedCallback(name, oldval, newval);
+        this.dispatchEvent(new Event(`${name}-changed`));
+        // update columns
+        if (name === 'desktop-items') {
+            this.style.gridTemplateColumns = `repeat(${this.columns}, 1fr)`;
+        }
+        // update rows
+        else if (name === 'mobile-items') {
+            this.style.gridTemplateRows = `repeat(${this.rows}, 1fr)`;
+        }
+    }
     firstUpdated() {
         this._initSlider();
     }

@@ -24,7 +24,7 @@ export const Core = css`
     display: flex;
     flex-wrap: nowrap;
     will-change: transform;
-    align-items: center;
+    align-items: stretch;
 }
 .k-slider__slides--dragging {
     user-select: none;
@@ -34,7 +34,7 @@ export const Core = css`
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     flex-shrink: 0;
     white-space: normal;
     user-select: none;
@@ -43,6 +43,10 @@ export const Core = css`
 }
 .k-slider__slide img{
     max-width: 100%;
+}
+.k-slider__slide k-card {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
 }
 .k-slider__slide a {
     user-select: none;

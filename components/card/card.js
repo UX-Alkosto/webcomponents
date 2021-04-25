@@ -62,4 +62,8 @@ export class Card extends LitElement {
         this.loaded = true;
         return html `<slot class="content"></slot>`;
     }
+    attributeChangedCallback(name, oldval, newval) {
+        super.attributeChangedCallback(name, oldval, newval);
+        this.dispatchEvent(new Event(`${name}-changed`));
+    }
 }

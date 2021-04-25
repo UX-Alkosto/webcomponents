@@ -34,6 +34,10 @@ export class Link extends LitElement {
         this.target = '_self';
         this.title = '';
     }
+    attributeChangedCallback(name, oldval, newval) {
+        super.attributeChangedCallback(name, oldval, newval);
+        this.dispatchEvent(new Event(`${name}-changed`));
+    }
     render() {
         this.loaded = true;
         const icon = (this.hasAttribute('icon')) ?
@@ -44,15 +48,5 @@ export class Link extends LitElement {
             <slot class="content"></slot>
             ${icon}
         </a>`;
-    }
-    _setIconStyles(){
-        // if (this._shadowRoot.querySelectorAll('#icon-styles').length) return;
-        // const iconStyles = document.createElement('link');
-        // Object.assign(iconStyles, {
-        //     id: 'icon-styles',
-        //     rel: 'stylesheet',
-        //     href: 'https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css'
-        // });
-        // return this._shadowRoot.appendChild(iconStyles);
     }
 }

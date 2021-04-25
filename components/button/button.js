@@ -3,6 +3,7 @@ import { LitElement, css, html } from 'lit-element';
 export class Button extends LitElement {
     static get properties() {
         return {
+            disabled: { type: Boolean },
             href: { type: String },
             loaded: { type: Boolean, reflect: true },
             icon: { type: String },
@@ -70,6 +71,10 @@ export class Button extends LitElement {
         this.loaded = false;
         this.target = '';
         this.variant = 'primary';
+    }
+    attributeChangedCallback(name, oldval, newval) {
+        super.attributeChangedCallback(name, oldval, newval);
+        this.dispatchEvent(new Event(`${name}-changed`));
     }
     render() {
         this.loaded = true;
