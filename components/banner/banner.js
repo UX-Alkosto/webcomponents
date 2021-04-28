@@ -16,6 +16,7 @@ export class Banner extends LitElement {
                 font-family: var(--font-family, 'Arial');
                 font-size: var(--font-base, 14px);
                 justify-content: center;
+                margin-bottom: 2rem;
                 overflow: hidden;
             }
             :host([type=full]) .container {
@@ -40,8 +41,7 @@ export class Banner extends LitElement {
             }
             ::slotted(h1),
             ::slotted(h2),
-            ::slotted(h3),
-            ::slotted(strong) {
+            ::slotted(h3) {
                 color: var(--primary-color2, #004691);
             }
             ::slotted(h2) {
@@ -64,7 +64,7 @@ export class Banner extends LitElement {
                 max-width: 1204px;
             }
             section,
-            slot {
+            .content {
                 align-items: center;
                 display: flex;
             }
@@ -118,14 +118,14 @@ export class Banner extends LitElement {
                 }
                 .left-cut {
                     margin-left: 0;
-                    filter: drop-shadow(8px 0 0 var(--primary-color2, #004691));
+                    filter: drop-shadow(10px 0 0 var(--primary-color2, #004691));
                 }
                 .left-cut img {
                     clip-path: polygon(0 0, 0 100%, 90% 100%, 100% 0);
                 }
                 .right-cut {
                     margin-right: 0;
-                    filter: drop-shadow(-8px 0 0 var(--primary-color2, #004691));
+                    filter: drop-shadow(-10px 0 0 var(--primary-color2, #004691));
                 }
                 .right-cut img {
                     clip-path: polygon(0 0, 10% 100%, 100% 100%, 100% 0);
@@ -138,6 +138,10 @@ export class Banner extends LitElement {
         this.src = '';
         this.type = 'left';
         this.loaded = false;
+    }
+    attributeChangedCallback(name, oldval, newval) {
+        super.attributeChangedCallback(name, oldval, newval);
+        this.dispatchEvent(new Event(`${name}-changed`));
     }
     render() {
         this.loaded = true;

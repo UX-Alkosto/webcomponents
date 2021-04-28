@@ -8,9 +8,9 @@ import cleanup from 'rollup-plugin-cleanup';
 // The main JavaScript bundle for modern browsers that support
 // JavaScript modules and other ES2015+ features.
 const config = {
-    input: 'src/components.js',
+    input: 'index.js',
     output: {
-        dir: 'dist',
+        file: 'dist/components.js',
         format: 'es',
     },
     plugins: [
