@@ -1,4 +1,6 @@
-import { LitElement, css, html } from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { common } from '../common';
+import { styles } from './css';
 
 export class Grid extends LitElement {
     static get properties() {
@@ -9,44 +11,25 @@ export class Grid extends LitElement {
         };
     }
     static get styles() {
-        return css`
-            :host {
-                display: flex;
-                flex: 1;
-                flex-wrap: no-wrap;
-                justify-content: center;
-                margin: 0 auto 2rem;
-                padding: 0 1rem;
-            }
-            .content {
-                display: grid;
-                grid-gap: 1rem;
-                width: 100%;
-            }
-            @media screen and (min-width: 768px) {
-                :host {
-                    padding: 0;
-                }
-            }
-        `;
+        return styles;
     }
     constructor() {
         super();
         this['desktop-columns'] = 6;
         this['mobile-columns'] = 2;
-        this.width = 1204;
+        this.width = common.defaultMaxWidth;
     }
     attributeChangedCallback(name, oldval, newval) {
         super.attributeChangedCallback(name, oldval, newval);
         this.dispatchEvent(new Event(`${name}-changed`));
     }
     render() {
-        return html`${this._dynamicStyles()}<slot class="content"></slot>`;
+        return html`${this._dynamicStyles()}${common.defaultSlot}`;
     }
     _dynamicStyles() {
         const desktopColumns = this['desktop-columns'];
         const mobileColumns = this['mobile-columns'];
-        const width = `${(this.width === 0 || this.width === null) ? 1204 : this.width}px`;
+        const width = `${(this.width === 0 || this.width === null) ? common.defaultMaxWidth : this.width}px`;
         return html`<style>
             :host {
                 max-width: ${width};

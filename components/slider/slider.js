@@ -1,7 +1,6 @@
 import Glide from '@glidejs/glide';
-import { LitElement, css, html } from 'lit-element';
-import { Core as coreStyles } from './css/core.js';
-import { Theme as themeStyles} from './css/theme.js';
+import { LitElement, html } from 'lit-element';
+import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 
 export class Slider extends LitElement {
     static get properties() {
@@ -20,22 +19,7 @@ export class Slider extends LitElement {
     }
     static get styles() {
         return [
-            css`
-                :host {
-                    background-color: var(--k-slider-background-color, #fff);
-                    display: flex;
-                    flex: 1;
-                    flex-wrap: no-wrap;
-                    justify-content: center;
-                    margin: 0 auto 2rem;
-                    padding: 0 1rem;
-                }
-                @media screen and (min-width: 768px) {
-                    :host {
-                        padding: 0;
-                    }
-                }
-            `,
+            styles,
             coreStyles,
             themeStyles
         ];
