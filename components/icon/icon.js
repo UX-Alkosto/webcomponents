@@ -1,4 +1,5 @@
-import { LitElement, css, html } from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { styles } from './css';
 
 export class Icon extends LitElement {
     static get properties() {
@@ -8,13 +9,7 @@ export class Icon extends LitElement {
         };
     }
     static get styles() {
-        return css`
-            :host {
-                box-sizing: border-box;
-                color: var(--k-icon-color, #E63027);
-                display: inline-block;
-            }
-        `;
+        return styles;
     }
     constructor() {
         super();

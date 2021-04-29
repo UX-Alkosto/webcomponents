@@ -30,7 +30,7 @@ export const Core = css`
     user-select: none;
 }
 .k-slider__slide {
-    align-items: center;
+    align-items: stretch;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -45,8 +45,8 @@ export const Core = css`
     max-width: 100%;
 }
 .k-slider__slide k-card {
-    height: -webkit-fill-available;
-    width: -webkit-fill-available;
+    max-height: 100%;
+    width: 100%;
 }
 .k-slider__slide a {
     user-select: none;

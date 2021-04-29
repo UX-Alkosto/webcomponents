@@ -1,4 +1,5 @@
-import { LitElement, css, html } from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { styles } from './css';
 
 export class Link extends LitElement {
     static get properties() {
@@ -11,17 +12,7 @@ export class Link extends LitElement {
         };
     }
     static get styles() {
-        return css`
-            :host {
-                align-items: center;
-                cursor: pointer;
-                display: inline-block;
-            }
-            a {
-                color: var(--primary-color2, #004691);
-                text-decoration: underline;
-            }
-        `;
+        return styles;
     }
     constructor() {
         super();
