@@ -89,6 +89,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css" rel="stylesheet">
     <script type="module" src="./dist/components.js"></script>
+    <script nomodule src="./dist/nomodule-components.js"></script>
 </head>
 
 <body>
@@ -213,19 +214,19 @@
     <!-- Grid -->
     <k-grid desktop-columns="3" width="900">
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-1@2x.png" alt="Lavadoras y secadores">
+            <k-img src="assets/images/product-1@2x.png" alt="Lavadoras y secadores" width="100"></k-img>
             <h3>Lavadoras y secadores</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina">
+            <k-img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina" width="100"></k-img>
             <h3>Cocina</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización">
+            <k-img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización" width="100"></k-img>
             <h3>Climatización</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>

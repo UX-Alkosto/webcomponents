@@ -30,8 +30,9 @@ export class Banner extends LitElement {
             </div>`;
     }
     getImage (src, type) {
+        if (!src.length) return;
         return html`<section class="${type}">
-            <img loading="lazy" src="${src}"/>
+            <k-img src="${src}"></k-img>
         </section>`;
     }
 }
