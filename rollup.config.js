@@ -31,7 +31,7 @@ const config = {
             showGzippedSize: true
         })
     ],
-    preserveEntrySignatures: false,
+    preserveEntrySignatures: false
 };
 
 // eslint-disable-next-line no-undef
