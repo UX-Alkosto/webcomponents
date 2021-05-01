@@ -26,6 +26,16 @@ export class Image extends LitElement {
     render() {
         if (this.src === undefined) return;
         this.loaded = true;
-        return html`<img loading="lazy" alt="${this.alt || ''}" height="${this.height || ''}" src="${this.src}" srcset="${this.srcset || ''}" width="${this.width || ''}" />`;
+        return html`${this._dynamicStyles()}<img loading="lazy" alt="${this.alt || ''}" height="${this.height || ''}" src="${this.src}" srcset="${this.srcset || ''}" width="${this.width || ''}" />`;
+    }
+    _dynamicStyles() {
+        const height = `${(this.height === 0 || this.height === undefined) ? 'auto' : `${this.height}px`}`;
+        const width = `${(this.width === 0 || this.width === undefined) ? 'auto' : `${this.width}px`}`;
+        return html`<style>
+            :host {
+                height: ${height};
+                width: ${width};
+            }
+        </style>`;
     }
 }

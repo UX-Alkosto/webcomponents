@@ -74,13 +74,13 @@ section,
 .right-cut {
     flex-basis: 100%;
 }
-.full k-img,
-.left k-img,
-.left-cut k-img,
-.right k-img,
-.right-cut k-img {
-    height: auto;
+.full img,
+.left img,
+.left-cut img,
+.right img,
+.right-cut img {
     max-width: 100%;
+    object-fit: cover;
     width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -109,14 +109,14 @@ section,
         margin-left: 0;
         filter: drop-shadow(10px 0 0 var(--primary-color2, #004691));
     }
-    .left-cut k-img {
+    .left-cut img {
         clip-path: polygon(0 0, 0 100%, 90% 100%, 100% 0);
     }
     .right-cut {
         margin-right: 0;
         filter: drop-shadow(-10px 0 0 var(--primary-color2, #004691));
     }
-    .right-cut k-img {
+    .right-cut img {
         clip-path: polygon(0 0, 10% 100%, 100% 100%, 100% 0);
     }
 }`;
