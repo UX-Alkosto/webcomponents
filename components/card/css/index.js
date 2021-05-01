@@ -32,14 +32,16 @@ const styles = css`:host{
     margin-top: 2rem;
     text-align: center;
 }
-:host([type=product-item]) ::slotted(img) {
+:host([type=product-item]) ::slotted(img),
+:host([type=product-item]) ::slotted(k-img) {
     margin-top: -3rem;
     max-width: 100%;
     width: auto;
     will-change: transform;
     transition: .3s ease-in-out transform;
 }
-:host([type=product-item]:hover) ::slotted(img){
+:host([type=product-item]:hover) ::slotted(img),
+:host([type=product-item]:hover) ::slotted(k-img){
     transform: scale3d(1.05, 1.05, 1);
 }
 :host([type=product-item]) ::slotted(p) {

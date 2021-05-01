@@ -79,7 +79,6 @@ section,
 .left-cut img,
 .right img,
 .right-cut img {
-    height: auto;
     max-width: 100%;
     object-fit: cover;
     width: 100%;

@@ -2,9 +2,7 @@
   "name": "webcomponents",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
-  "module": "index.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel watch",
     "build": "rollup -c",
@@ -16,11 +14,12 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/node": "^14.14.41",
     "@webcomponents/webcomponentsjs": "^2.5.0",
-    "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
     "deepmerge": "^4.2.2",
     "eslint": "^7.25.0",
@@ -32,16 +31,16 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rollup": "^2.45.2",
+    "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-minify-html-literals": "^1.2.6",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "web-component-analyzer": "^1.1.6"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UX-Alkosto/webcomponents/stores.git"
+    "url": "git+https://github.com/UX-Alkosto/webcomponents.git"
   },
   "keywords": [
     "javascript",

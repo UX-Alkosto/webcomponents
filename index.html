@@ -79,11 +79,6 @@
             margin: 0;
             padding: 0;
         }
-        @media screen and (min-width: 768px){
-            k-banner:is([type*=-cut]) {
-                height: 180px;
-            }
-        }
     </style>
     <link rel="modulepreload" href="./dist/components.js">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -93,25 +88,25 @@
 
 <body>
     <!-- Banners -->
-    <k-banner src="assets/images/banner-1@2x.png" type="left-cut">
+    <k-banner type="left-cut" src="assets/images/banner-1.png" height="180">
         <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
     </k-banner>
-    <k-banner src="assets/images/banner-1@2x.png" type="right-cut">
+    <k-banner type="right-cut" src="assets/images/banner-1.png" height="180">
         <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
     </k-banner>
-    <k-banner src="assets/images/banner-2@2x.png" type="left">
+    <k-banner type="left" src="assets/images/banner-2.png" height="360">
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
         <k-button variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
-    <k-banner src="assets/images/banner-2@2x.png" type="right">
+    <k-banner type="right" src="assets/images/banner-2.png" height="360">
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
         <k-button variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
-    <k-banner src="assets/images/banner-3@2x.png" type="full">
+    <k-banner type="full" src="assets/images/banner-3.png" height="280">
         <p>Déjate sorprender por Ktronix, un espectáculo de conectividad y emoción.</p>
         <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
         <k-button>Ver todos los productos</k-button>
@@ -213,19 +208,19 @@
     <!-- Grid -->
     <k-grid desktop-columns="3" width="900">
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-1@2x.png" alt="Lavadoras y secadores">
+            <img loading="lazy" src="assets/images/product-1@2x.png" alt="Lavadoras y secadores" width="100" height="100" />
             <h3>Lavadoras y secadores</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina">
+            <img loading="lazy" src="assets/images/product-2@2x.png" alt="Cocina" width="100" height="100" />
             <h3>Cocina</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
         </k-card>
         <k-card type="product-item">
-            <img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización">
+            <img loading="lazy" src="assets/images/product-3@2x.png" alt="Climatización" width="100" height="100" />
             <h3>Climatización</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
             <k-link href="#" title="Ver productos" icon="alk-icon-arrow-right-square">Ver productos</k-link>
