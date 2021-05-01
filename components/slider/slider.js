@@ -1,4 +1,3 @@
-import Glide from '@glidejs/glide';
 import { LitElement, html } from 'lit-element';
 import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 
@@ -66,41 +65,44 @@ export class Slider extends LitElement {
             :host { max-width: ${width}; }
         </style>`;
     }
-    _initSlider() {
+    async _initSlider() {
         let rawSlides = this.innerHTML;
         const slides = this.shadowRoot.querySelector('.k-slider__slides');
         slides.innerHTML = rawSlides;
         this.innerHTML = '';
         this.loaded = true;
-        return new Glide(this.shadowRoot.querySelector('.k-slider'), {
-            classes: {
-                direction: {
-                    ltr: 'k-slider--ltr',
-                    rtl: 'k-slider--rtl'
+        await import('@glidejs/glide').then((Module) => {
+            const Glide = Module.default;
+            return new Glide(this.shadowRoot.querySelector('.k-slider'), {
+                classes: {
+                    direction: {
+                        ltr: 'k-slider--ltr',
+                        rtl: 'k-slider--rtl'
+                    },
+                    slider: 'k-slider--slider',
+                    carousel: 'k-slider--carousel',
+                    swipeable: 'k-slider--swipeable',
+                    dragging: 'k-slider--dragging',
+                    cloneSlide: 'k-slider__slide--clone',
+                    activeNav: 'k-slider__bullet--active',
+                    activeSlide: 'k-slider__slide--active',
+                    disabledArrow: 'k-slider__arrow--disabled'
                 },
-                slider: 'k-slider--slider',
-                carousel: 'k-slider--carousel',
-                swipeable: 'k-slider--swipeable',
-                dragging: 'k-slider--dragging',
-                cloneSlide: 'k-slider__slide--clone',
-                activeNav: 'k-slider__bullet--active',
-                activeSlide: 'k-slider__slide--active',
-                disabledArrow: 'k-slider__arrow--disabled'
-            },
-            gap: this['items-space'],
-            type: 'carousel',
-            peek: this.peek,
-            perView: this['desktop-items'],
-            breakpoints: {
-                768: {
-                    perView: this['mobile-items'],
-                    peek: 0
-                },
-                359: {
-                    perView: 1,
-                    peek: 0
+                gap: this['items-space'],
+                type: 'carousel',
+                peek: this.peek,
+                perView: this['desktop-items'],
+                breakpoints: {
+                    768: {
+                        perView: this['mobile-items'],
+                        peek: 0
+                    },
+                    359: {
+                        perView: 1,
+                        peek: 0
+                    }
                 }
-            }
-        }).mount();
+            }).mount();
+        });
     }
 }

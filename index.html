@@ -79,40 +79,34 @@
             margin: 0;
             padding: 0;
         }
-        @media screen and (min-width: 768px){
-            k-banner:is([type*=-cut]) {
-                height: 180px;
-            }
-        }
     </style>
     <link rel="modulepreload" href="./dist/components.js">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/gh/ux-alkosto/icons/style.min.css" rel="stylesheet">
     <script type="module" src="./dist/components.js"></script>
-    <script nomodule src="./dist/nomodule-components.js"></script>
 </head>
 
 <body>
     <!-- Banners -->
-    <k-banner src="assets/images/banner-1@2x.png" type="left-cut">
+    <k-banner src="assets/images/banner-1.png" type="left-cut" height="180">
         <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
     </k-banner>
-    <k-banner src="assets/images/banner-1@2x.png" type="right-cut">
+    <k-banner src="assets/images/banner-1.png" type="right-cut" height="180">
         <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
     </k-banner>
-    <k-banner src="assets/images/banner-2@2x.png" type="left">
+    <k-banner src="assets/images/banner-2.png" type="left" height="360">
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
         <k-button variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
-    <k-banner src="assets/images/banner-2@2x.png" type="right">
+    <k-banner src="assets/images/banner-2.png" type="right" height="360">
         <h3>Conéctate desde casa</h3>
         <p>Extensores de red, Router, cables y herramientas. <br>
             Los mejores productos para una conectividad avanzada a solo un clic.</p>
         <k-button variant="outline" href="#">Ver todos los productos</k-button>
     </k-banner>
-    <k-banner src="assets/images/banner-3@2x.png" type="full">
+    <k-banner src="assets/images/banner-3.png" type="full" height="280">
         <p>Déjate sorprender por Ktronix, un espectáculo de conectividad y emoción.</p>
         <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
         <k-button>Ver todos los productos</k-button>
