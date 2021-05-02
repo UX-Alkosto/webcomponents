@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 export const Core = css`
 .k-slider {
     box-sizing: border-box;

@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 import { Core } from './core.js';
 import { Theme } from './theme.js';
 
