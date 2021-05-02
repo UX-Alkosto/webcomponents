@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 const styles = css`:host {
     color: var(--text-color1, #444444);
     display: flex;

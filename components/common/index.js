@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html } from 'lit';
 
 const common = {
     defaultSlot: html`<slot class="content"></slot>`,

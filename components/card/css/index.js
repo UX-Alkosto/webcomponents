@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 
 const styles = css`:host{
     background-color: var(--k-card-background-color, #fff);

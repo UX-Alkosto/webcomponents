@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 
 export class Slider extends LitElement {
