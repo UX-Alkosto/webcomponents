@@ -2,23 +2,22 @@ import { css } from 'lit';
 
 export const Theme = css`
 .k-slider__arrow {
-    position: absolute;
-    display: block;
-    top: 50%;
-    z-index: 2;
-    color: white;
-    text-transform: uppercase;
-    padding: 9px 12px;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
+    background-color: white;
+    border-radius: 48px;
+    border: none;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-    text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-    opacity: 1;
     cursor: pointer;
+    display: block;
+    height: 48px;
+    line-height: 1;
+    opacity: 1;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
     transition: opacity 150ms ease, border 300ms ease-in-out;
     transform: translateY(-50%);
-    line-height: 1;
+    width: 48px;
+    z-index: 2;
 }
 .k-slider__arrow:focus {
     outline: none;
@@ -27,10 +26,10 @@ export const Theme = css`
     border-color: white;
 }
 .k-slider__arrow--left {
-    left: 2em;
+    left: 1em;
 }
 .k-slider__arrow--right {
-    right: 2em;
+    right: 1em;
 }
 .k-slider__arrow--disabled {
     opacity: 0.33;
@@ -39,7 +38,7 @@ export const Theme = css`
 .k-slider__bullets {
     position: absolute;
     z-index: 2;
-    bottom: 2em;
+    bottom: -2em;
     left: 50%;
     display: inline-flex;
     list-style: none;
@@ -47,27 +46,26 @@ export const Theme = css`
 }
 
 .k-slider__bullet {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 9px;
-    height: 9px;
+    background-color: var(--k-slider-bullet-color,#F5F5F5);
+    width: 12px;
+    height: 12px;
     padding: 0;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 0;
     transition: all 300ms ease-in-out;
     cursor: pointer;
     line-height: 0;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-    margin: 0 0.25em;
+    margin: 0 0.5em;
 }
 .k-slider__bullet:focus {
     outline: none;
 }
 .k-slider__bullet:hover, .k-slider__bullet:focus {
-    border: 2px solid white;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--k-slider-bullet-color-hover, #004691);
 }
 .k-slider__bullet--active {
-    background-color: white;
+    background-color: var(--carousel-nav-color, #004691);
 }
 
 .k-slider--swipeable {
@@ -80,4 +78,13 @@ export const Theme = css`
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
-}`;
+}
+:host([mobile-bullets=false]) .k-slider__bullets {
+    display:none;
+}
+@media screen and (min-width: 768px) {
+    :host([desktop-bullets=false]) .k-slider__bullets {
+        display:none;
+    }
+}
+`;
