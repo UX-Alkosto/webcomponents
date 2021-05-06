@@ -98,7 +98,7 @@ section,
     }
     .left,
     .right{
-        flex-basis: 60%;
+        flex-basis: 50%;
     }
     .left-cut,
     .right-cut {
