@@ -4,13 +4,15 @@ import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 export class Slider extends LitElement {
     static get properties() {
         return {
-            'desktop-arrows': { type: Number },
-            'desktop-bullets': { type: Number },
+            'arrows': { type: Boolean },
+            'bullets': { type: Boolean },
+            'desktop-arrows': { type: Boolean },
+            'desktop-bullets': { type: Boolean },
             'desktop-items': { type: Number },
             'items-space': { type: Number },
             loaded: { type: Boolean, reflect: true },
-            'mobile-arrows': { type: Number },
-            'mobile-bullets': { type: Number },
+            'mobile-arrows': { type: Boolean },
+            'mobile-bullets': { type: Boolean },
             'mobile-items': { type: Number },
             peek: { type: Number },
             width: { type: Number }
@@ -25,6 +27,9 @@ export class Slider extends LitElement {
     }
     constructor() {
         super();
+        this.arrows = false;
+        this.bullets = false;
+        this.countSlides = this.childElementCount;
         this['desktop-arrows'] = false;
         this['desktop-bullets'] = false;
         this['desktop-items'] = 6;
@@ -57,6 +62,8 @@ export class Slider extends LitElement {
             <div data-glide-el="track" class="k-slider__track">
                 <slot class="k-slider__slides"></slot>
             </div>
+            ${(this.arrows) ? this._getArrows() : ''}
+            ${(this.bullets) ? this._getDots() : ''}
         </div>`;
     }
     _dynamicStyles() {
@@ -65,44 +72,57 @@ export class Slider extends LitElement {
             :host { max-width: ${width}; }
         </style>`;
     }
+    _getArrows() {
+        return html`<div class="k-slider__arrows" data-glide-el="controls">
+            <button class="k-slider__arrow k-slider__arrow--left" data-glide-dir="<"><k-icon icon="alk-icon-arrow-left-square"></k-icon></button>
+            <button class="k-slider__arrow k-slider__arrow--right" data-glide-dir=">"><k-icon icon="alk-icon-arrow-right-square"></k-icon></button>
+        </div>`;
+    }
+    _getDots() {
+        const bullets = [];
+        for (let index = 0; index < this.countSlides; index++) {
+            bullets.push(html`<button class="k-slider__bullet" data-glide-dir="=${index}"></button>`);
+        }
+        return html`<div class="k-slider__bullets" data-glide-el="controls[nav]">
+            ${bullets}
+        </div>`;
+    }
     async _initSlider() {
+        const Glide = await import('@glidejs/glide').then(Module => Module.default);
         let rawSlides = this.innerHTML;
         const slides = this.shadowRoot.querySelector('.k-slider__slides');
         slides.innerHTML = rawSlides;
         this.innerHTML = '';
         this.loaded = true;
-        await import('@glidejs/glide').then((Module) => {
-            const Glide = Module.default;
-            return new Glide(this.shadowRoot.querySelector('.k-slider'), {
-                classes: {
-                    direction: {
-                        ltr: 'k-slider--ltr',
-                        rtl: 'k-slider--rtl'
-                    },
-                    slider: 'k-slider--slider',
-                    carousel: 'k-slider--carousel',
-                    swipeable: 'k-slider--swipeable',
-                    dragging: 'k-slider--dragging',
-                    cloneSlide: 'k-slider__slide--clone',
-                    activeNav: 'k-slider__bullet--active',
-                    activeSlide: 'k-slider__slide--active',
-                    disabledArrow: 'k-slider__arrow--disabled'
+        return new Glide(this.shadowRoot.querySelector('.k-slider'), {
+            classes: {
+                direction: {
+                    ltr: 'k-slider--ltr',
+                    rtl: 'k-slider--rtl'
                 },
-                gap: this['items-space'],
-                type: 'carousel',
-                peek: this.peek,
-                perView: this['desktop-items'],
-                breakpoints: {
-                    768: {
-                        perView: this['mobile-items'],
-                        peek: 0
-                    },
-                    359: {
-                        perView: 1,
-                        peek: 0
-                    }
+                slider: 'k-slider--slider',
+                carousel: 'k-slider--carousel',
+                swipeable: 'k-slider--swipeable',
+                dragging: 'k-slider--dragging',
+                cloneSlide: 'k-slider__slide--clone',
+                activeNav: 'k-slider__bullet--active',
+                activeSlide: 'k-slider__slide--active',
+                disabledArrow: 'k-slider__arrow--disabled'
+            },
+            gap: this['items-space'],
+            type: 'carousel',
+            peek: this.peek,
+            perView: this['desktop-items'],
+            breakpoints: {
+                768: {
+                    perView: this['mobile-items'],
+                    peek: 0
+                },
+                359: {
+                    perView: 1,
+                    peek: 0
                 }
-            }).mount();
-        });
+            }
+        }).mount();
     }
 }

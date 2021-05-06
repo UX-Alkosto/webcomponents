@@ -14,11 +14,12 @@ export const Core = css`
 .k-slider__slides {
     align-items: stretch;
     backface-visibility: hidden;
+    background-color: var(--k-slider-background-color, #fff);
     display: flex;
     flex-wrap: nowrap;
     list-style: none;
     overflow: hidden;
-    padding: 1rem 0;
+    padding: .5em 0;
     position: relative;
     touch-action: pan-Y;
     transform-style: preserve-3d;

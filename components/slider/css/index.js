@@ -3,18 +3,16 @@ import { Core } from './core.js';
 import { Theme } from './theme.js';
 
 const styles = css`:host {
-    background-color: var(--k-slider-background-color, #fff);
     display: flex;
     flex: 1;
     flex-wrap: no-wrap;
     justify-content: center;
     margin: 0 auto 2rem;
-    padding: 0 1rem;
+    padding: 0;
 }
-@media screen and (min-width: 768px) {
-    :host {
-        padding: 0;
-    }
-}`;
+:host([bullets=true]){
+    padding-bottom: 2em;
+}
+`;
 
 export { styles, Core, Theme };
