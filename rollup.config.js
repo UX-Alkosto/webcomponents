@@ -16,7 +16,7 @@ const config = {
     output: [{
         banner: `/*! ${name} release: ${version} */`,
         dir: 'dist',
-        chunkFileNames: 'component-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
         format: 'es'
     }],
     plugins: [
