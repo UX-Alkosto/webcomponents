@@ -35,7 +35,6 @@ export class Banner extends LitElement {
     }
     _dynamicStyles() {
         const width = `${(this.width === null) ? 'flex-basis: 50% !important;' : `flex-basis: ${this.width}px !important;`}`;
-        console.log(width);
         return html`<style>
             @media screen and (min-width: 768px) {
                 .left,
