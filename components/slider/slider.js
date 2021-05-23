@@ -54,6 +54,15 @@ export class Slider extends LitElement {
         }
     }
     firstUpdated() {
+        this.arrows = isTrueSet(this.getAttribute('arrows'));
+        this['desktop-arrows'] = isTrueSet(this.getAttribute('desktop-arrows')) ?
+            true : this.arrows;
+        this['desktop-bullets'] = isTrueSet(this.getAttribute('desktop-bullets')) ?
+            true : this.bullets;
+        this['mobile-arrows'] = isTrueSet(this.getAttribute('mobile-arrows')) ?
+            true : this.arrows;
+        this['mobile-bullets'] = isTrueSet(this.getAttribute('mobile-bullets')) ?
+            true : this.bullets;
         this._initSlider();
     }
     render() {
@@ -62,14 +71,16 @@ export class Slider extends LitElement {
             <div data-glide-el="track" class="k-slider__track">
                 <slot class="k-slider__slides"></slot>
             </div>
-            ${(this.arrows) ? this._getArrows() : ''}
-            ${(this.bullets) ? this._getDots() : ''}
+            ${(this['desktop-arrows'] || this['mobile-arrows']) ? this._getArrows() : ''}
+            ${(this['desktop-bullets'] || this['mobile-bullets']) ? this._getDots() : ''}
         </div>`;
     }
     _dynamicStyles() {
-        const width = `${(this.width === 0 || this.width === null || this.width === undefined) ? 1204 : this.width}px`;
+        const width = `${(this.width === 0 || this.width === null || this.width === undefined) ? 1204 : this.width}`;
         return html`<style>
-            :host { max-width: ${width}; }
+            :host {
+                max-width: ${width}px;
+            }
         </style>`;
     }
     _getArrows() {
@@ -125,4 +136,9 @@ export class Slider extends LitElement {
             }
         }).mount();
     }
+}
+
+function isTrueSet(value = '') {
+    if(typeof value !== 'string') return false;
+    return value.toLowerCase() === 'true' && true;
 }
