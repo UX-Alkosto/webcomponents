@@ -79,12 +79,30 @@ export const Theme = css`
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
 }
-:host([mobile-bullets=false]) .k-slider__bullets {
+:where(:host([arrows=false]) .k-slider__arrow),
+:host([mobile-arrows=false]) .k-slider__arrow {
+    display:none;
+}
+:where(:host([bullets=false]) .k-slider__bullets),
+:host([mobile-bullets=false]) .k-slider__bullets{
     display:none;
 }
 @media screen and (min-width: 768px) {
+    :where(:host([arrows=false]) .k-slider__arrow),
+    :host([desktop-arrows=false]) .k-slider__arrow {
+        display:none;
+    }
+    :where(:host([bullets=false]) .k-slider__bullets),
     :host([desktop-bullets=false]) .k-slider__bullets {
         display:none;
+    }
+    :where(:host([arrows=true]) .k-slider__arrow),
+    :host([desktop-arrows=true]) .k-slider__arrow {
+        display:block;
+    }
+    :where(:host([bullets=true]) .k-slider__bullets),
+    :host([desktop-bullets=true]) .k-slider__bullets {
+        display:block;
     }
 }
 `;
