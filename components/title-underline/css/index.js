@@ -1,4 +1,5 @@
-import { css } from 'lit';
+import { css, unsafeCSS } from 'lit';
+import { common } from '../../common';
 
 const styles = css`:host{
     border-bottom: 1px solid var(--k-title-underline-border-color, #E0E0E0);
@@ -21,22 +22,34 @@ const styles = css`:host{
 }
 ::slotted(h1),
 ::slotted(h2),
-::slotted(h3) {
+::slotted(h3),
+::slotted(h4),
+::slotted(h5),
+::slotted(h6) {
+    box-shadow: inset 0 -1px 0 0px var(--primary-color1, #E63027), 0px 2px 0 0px var(--primary-color1, #E63027);
     color: var(--primary-color2, #004691);
     display: inline-block;
     margin: 0;
     padding: .5em 0;
     position: relative;
 }
-::slotted(h1):after,
-::slotted(h2):after,
-::slotted(h3):after {
-    border-bottom: 3px solid var(--primary-color1, #E63027);;
-    bottom: -2px;
-    content: '';
-    left: 0;
-    position: absolute;
-    width: 100%;
+::slotted(h1) {
+    font-size: ${unsafeCSS(common.fontWidth.h1)};
+}
+::slotted(h2) {
+    font-size: ${unsafeCSS(common.fontWidth.h2)};
+}
+::slotted(h3) {
+    font-size: ${unsafeCSS(common.fontWidth.h3)};
+}
+::slotted(h4) {
+    font-size: ${unsafeCSS(common.fontWidth.h4)};
+}
+::slotted(h5) {
+    font-size: ${unsafeCSS(common.fontWidth.h5)};
+}
+::slotted(h6) {
+    font-size: ${unsafeCSS(common.fontWidth.h6)};
 }`;
 
 export { styles };
