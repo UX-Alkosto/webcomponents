@@ -1,17 +1,17 @@
-import { css } from 'lit';
+import { css, unsafeCSS } from 'lit';
+import { common } from '../../common';
 const styles = css`:host {
     color: var(--text-color1, #444444);
     display: flex;
     flex-wrap: wrap;
     font-family: var(--font-family, 'Arial');
-    font-size: var(--font-base, 14px);
+    font-size: var(--font-base, ${unsafeCSS(common.fontWidth.p)});
     justify-content: center;
     margin-bottom: 2rem;
     overflow: hidden;
 }
 :host([type=full]) .container {
     flex-wrap: wrap;
-    max-width: 1204px;
 }
 :host([type=full]) .content {
     text-align: center;
@@ -34,15 +34,24 @@ const styles = css`:host {
 ::slotted(h3) {
     color: var(--primary-color2, #004691);
 }
+::slotted(h1) {
+    font-size: ${unsafeCSS(common.fontWidth.h1)};
+}
 ::slotted(h2) {
-    font-size: 1.125rem;
+    font-size: ${unsafeCSS(common.fontWidth.h2)};
 }
 ::slotted(h3) {
-    font-size: 1rem;
+    font-size: ${unsafeCSS(common.fontWidth.h3)};
+}
+::slotted(h4) {
+    font-size: ${unsafeCSS(common.fontWidth.h4)};
+}
+::slotted(h5) {
+    font-size: ${unsafeCSS(common.fontWidth.h5)};
 }
 ::slotted(p) {
     color: var(--text-color1, #444444);
-    font-size: var(--font-base, 14px);
+    font-size: var(--font-base, ${unsafeCSS(common.fontWidth.p)});
     line-height: 1.572em;
 }
 .container {
@@ -51,7 +60,7 @@ const styles = css`:host {
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    max-width: 1204px;
+    max-width: ${unsafeCSS(`${common.defaultMaxWidth}px`)};
 }
 section,
 .content {
