@@ -9,6 +9,7 @@ const common = {
         h3: '16px',
         h4: '15px',
         h5: '14px',
+        h6: '14px',
         p: '14px'
     }
 };
