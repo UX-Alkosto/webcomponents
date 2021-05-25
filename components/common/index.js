@@ -4,12 +4,12 @@ const common = {
     defaultSlot: html`<slot class="content"></slot>`,
     defaultMaxWidth: 1204,
     fontWidth: {
-        h1: '24px',
-        h2: '18px',
-        h3: '16px',
-        h4: '15px',
-        h5: '14px',
-        h6: '14px',
+        h1: '24px !important',
+        h2: '18px !important',
+        h3: '16px !important',
+        h4: '15px !important',
+        h5: '14px !important',
+        h6: '14px !important',
         p: '14px'
     }
 };
