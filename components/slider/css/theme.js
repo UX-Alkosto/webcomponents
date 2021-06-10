@@ -8,12 +8,13 @@ export const Theme = css`
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
     display: block;
+    font-size: 30px;
     height: 48px;
     line-height: 1;
     opacity: 1;
     padding: 12px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     transition: opacity 150ms ease, border 300ms ease-in-out;
     transform: translateY(-50%);
     width: 48px;

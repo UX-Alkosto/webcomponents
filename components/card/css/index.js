@@ -28,10 +28,28 @@ const styles = css`:host{
     padding: .5rem;
     text-align: center;
 }
+:host([type=icon-item]){
+    margin-top: 4rem;
+}
+
+:host([type=icon-item]) ::slotted(k-icon){
+    border: solid 1px var(--primary-color1);
+    border-radius: 50px;
+    font-size: 40px;
+    height: 90px;
+    margin-top: -30px;
+    width: 90px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
 :host([type=product-item]) {
     margin-top: 2rem;
     text-align: center;
 }
+
 :host([type=product-item]) ::slotted(img),
 :host([type=product-item]) ::slotted(k-img) {
     margin-top: -3rem;
