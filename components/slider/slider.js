@@ -85,8 +85,8 @@ export class Slider extends LitElement {
     }
     _getArrows() {
         return html`<div class="k-slider__arrows" data-glide-el="controls">
-            <button class="k-slider__arrow k-slider__arrow--left" data-glide-dir="<"><k-icon icon="alk-icon-arrow-left-square"></k-icon></button>
-            <button class="k-slider__arrow k-slider__arrow--right" data-glide-dir=">"><k-icon icon="alk-icon-arrow-right-square"></k-icon></button>
+            <button class="k-slider__arrow k-slider__arrow--left" data-glide-dir="<"><k-icon icon="alk-icon-izquierda"></k-icon></button>
+            <button class="k-slider__arrow k-slider__arrow--right" data-glide-dir=">"><k-icon icon="alk-icon-derecha"></k-icon></button>
         </div>`;
     }
     _getDots() {

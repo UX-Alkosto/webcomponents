@@ -2,13 +2,15 @@ import { css } from 'lit';
 
 export const Theme = css`
 .k-slider__arrow {
+    align-items: center;
     background-color: white;
     border-radius: 48px;
     border: none;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    display: block;
+    display: flex;
     height: 48px;
+    justify-content: center;
     line-height: 1;
     opacity: 1;
     padding: 12px;
@@ -18,6 +20,9 @@ export const Theme = css`
     transform: translateY(-50%);
     width: 48px;
     z-index: 2;
+}
+.k-slider__arrow k-icon {
+    font-size: 30px;
 }
 .k-slider__arrow:focus {
     outline: none;
