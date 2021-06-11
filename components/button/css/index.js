@@ -10,7 +10,7 @@ const styles = css`:host {
     cursor: pointer;
     display: inline-flex;
     font-family: var(--font-family, 'Arial');
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: normal;
     justify-content: center;
     line-height: 1.125rem;

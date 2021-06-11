@@ -54,6 +54,10 @@ const styles = css`:host {
     font-size: var(--font-base, ${unsafeCSS(common.fontWidth.p)});
     line-height: 1.572em;
 }
+::slotted(k-button) {
+    width:100%;
+}
+
 .container {
     display: flex;
     flex: 1;
@@ -91,6 +95,11 @@ section,
     max-width: 100%;
     object-fit: cover;
     width: 100%;
+}
+@media screen and (min-width: 420px) {
+    ::slotted(k-button) {
+        width:auto;
+    }
 }
 @media screen and (min-width: 768px) {
     :host([type=full]) .content{
