@@ -1,11 +1,12 @@
 import { css, unsafeCSS } from 'lit';
 import { common } from '../../common';
+
 const styles = css`:host {
     color: var(--text-color1, #444444);
     display: flex;
     flex-wrap: wrap;
     font-family: var(--font-family, 'Arial');
-    font-size: var(--font-base, ${unsafeCSS(common.fontWidth.p)});
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.base)});
     justify-content: center;
     margin-bottom: 2rem;
     overflow: hidden;
@@ -35,29 +36,28 @@ const styles = css`:host {
     color: var(--primary-color2, #004691);
 }
 ::slotted(h1) {
-    font-size: ${unsafeCSS(common.fontWidth.h1)};
+    font-size: ${unsafeCSS(common.fontSize.h1)};
 }
 ::slotted(h2) {
-    font-size: ${unsafeCSS(common.fontWidth.h2)};
+    font-size: ${unsafeCSS(common.fontSize.h2)};
 }
 ::slotted(h3) {
-    font-size: ${unsafeCSS(common.fontWidth.h3)};
+    font-size: ${unsafeCSS(common.fontSize.h3)};
 }
 ::slotted(h4) {
-    font-size: ${unsafeCSS(common.fontWidth.h4)};
+    font-size: ${unsafeCSS(common.fontSize.h4)};
 }
 ::slotted(h5) {
-    font-size: ${unsafeCSS(common.fontWidth.h5)};
+    font-size: ${unsafeCSS(common.fontSize.h5)};
 }
 ::slotted(p) {
     color: var(--text-color1, #444444);
-    font-size: var(--font-base, ${unsafeCSS(common.fontWidth.p)});
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
     line-height: 1.572em;
 }
 ::slotted(k-button) {
     width:100%;
 }
-
 .container {
     display: flex;
     flex: 1;

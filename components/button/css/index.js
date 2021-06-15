@@ -1,4 +1,5 @@
-import { css } from 'lit';
+import { css, unsafeCSS } from 'lit';
+import { common } from '../../common';
 
 const styles = css`:host {
     align-items: center;
@@ -10,7 +11,7 @@ const styles = css`:host {
     cursor: pointer;
     display: inline-flex;
     font-family: var(--font-family, 'Arial');
-    font-size: 16px;
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.base)});
     font-weight: normal;
     justify-content: center;
     line-height: 1.125rem;

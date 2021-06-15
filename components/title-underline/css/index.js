@@ -4,6 +4,7 @@ import { common } from '../../common';
 const styles = css`:host{
     border-bottom: 1px solid var(--k-title-underline-border-color, #E0E0E0);
     display: flex;
+    font-family: var(--font-family, 'Arial');
     margin: 0 0 1rem;
     max-width: 100%;
     padding: 0;
@@ -34,22 +35,25 @@ const styles = css`:host{
     position: relative;
 }
 ::slotted(h1) {
-    font-size: ${unsafeCSS(common.fontWidth.h1)};
+    font-size: ${unsafeCSS(common.fontSize.h1)};
 }
 ::slotted(h2) {
-    font-size: ${unsafeCSS(common.fontWidth.h2)};
+    font-size: ${unsafeCSS(common.fontSize.h2)};
 }
 ::slotted(h3) {
-    font-size: ${unsafeCSS(common.fontWidth.h3)};
+    font-size: ${unsafeCSS(common.fontSize.h3)};
 }
 ::slotted(h4) {
-    font-size: ${unsafeCSS(common.fontWidth.h4)};
+    font-size: ${unsafeCSS(common.fontSize.h4)};
 }
 ::slotted(h5) {
-    font-size: ${unsafeCSS(common.fontWidth.h5)};
+    font-size: ${unsafeCSS(common.fontSize.h5)};
 }
 ::slotted(h6) {
-    font-size: ${unsafeCSS(common.fontWidth.h6)};
+    font-size: ${unsafeCSS(common.fontSize.h6)};
+}
+::slotted(p) {
+    font-size: ${unsafeCSS(common.fontSize.p)};
 }`;
 
 export { styles };
