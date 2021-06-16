@@ -30,7 +30,7 @@ const styles = css`:host{
     box-shadow: inset 0 -1px 0 0px var(--primary-color1, #E63027), 0px 2px 0 0px var(--primary-color1, #E63027);
     color: var(--primary-color2, #004691);
     display: inline-block;
-    margin: 0;
+    margin: 0 !important;
     padding: .5em 0;
     position: relative;
 }
