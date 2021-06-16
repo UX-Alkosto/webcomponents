@@ -22,7 +22,7 @@ export const Theme = css`
     z-index: 2;
 }
 .k-slider__arrow k-icon {
-    font-size: 30px;
+    font-size: 20px;
 }
 .k-slider__arrow:focus {
     outline: none;
