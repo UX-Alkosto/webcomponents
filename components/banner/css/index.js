@@ -75,7 +75,7 @@ section,
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     order: 2;
 }
 .full{
@@ -100,9 +100,6 @@ section,
     ::slotted(k-button) {
         width:auto;
     }
-    .content {
-        padding: 1rem;
-    }
 }
 @media screen and (min-width: 768px) {
     :host([type=full]) .content{
@@ -116,6 +113,7 @@ section,
     .content {
         align-items: flex-start;
         order: unset;
+        padding: 2rem;
     }
     .left,
     .right{
