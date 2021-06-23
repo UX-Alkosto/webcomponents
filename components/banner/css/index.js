@@ -100,6 +100,9 @@ section,
     ::slotted(k-button) {
         width:auto;
     }
+    .content {
+        padding: 1rem;
+    }
 }
 @media screen and (min-width: 768px) {
     :host([type=full]) .content{

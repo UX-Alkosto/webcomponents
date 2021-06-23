@@ -1,3 +1,4 @@
+import { Acordeon } from './components/acordeon';
 import { Banner } from './components/banner';
 import { Button } from './components/button';
 import { Card } from './components/card';
@@ -8,6 +9,7 @@ import { Link } from './components/link';
 import { Slider } from './components/slider';
 import { TitleUnderline } from './components/title-underline';
 
+window.customElements.define('k-acordeon', Acordeon);
 window.customElements.define('k-banner', Banner);
 window.customElements.define('k-button', Button);
 window.customElements.define('k-card', Card);
