@@ -69,7 +69,7 @@ const styles = css`:host{
 ::slotted(h2),
 ::slotted(h3),
 ::slotted(strong) {
-    color: var(--primary-color2, #004691);
+    color: var(--primary-color2, #004691) !important;
 }
 ::slotted(p) {
     color: var(--text-color1, #444444);
