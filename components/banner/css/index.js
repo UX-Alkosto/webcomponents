@@ -33,7 +33,7 @@ const styles = css`:host {
 ::slotted(h1),
 ::slotted(h2),
 ::slotted(h3) {
-    color: var(--primary-color2, #004691);
+    color: var(--primary-color2, #004691) !important;
 }
 ::slotted(h1) {
     font-size: ${unsafeCSS(common.fontSize.h1)};
