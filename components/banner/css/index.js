@@ -33,7 +33,7 @@ const styles = css`:host {
 ::slotted(h1),
 ::slotted(h2),
 ::slotted(h3) {
-    color: var(--primary-color2, #004691);
+    color: var(--primary-color2, #004691) !important;
 }
 ::slotted(h1) {
     font-size: ${unsafeCSS(common.fontSize.h1)};
@@ -75,7 +75,7 @@ section,
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     order: 2;
 }
 .full{
@@ -113,6 +113,7 @@ section,
     .content {
         align-items: flex-start;
         order: unset;
+        padding: 2rem;
     }
     .left,
     .right{

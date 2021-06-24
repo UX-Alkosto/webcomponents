@@ -28,7 +28,7 @@ const styles = css`:host{
 ::slotted(h5),
 ::slotted(h6) {
     box-shadow: inset 0 -1px 0 0px var(--primary-color1, #E63027), 0px 2px 0 0px var(--primary-color1, #E63027);
-    color: var(--primary-color2, #004691);
+    color: var(--primary-color2, #004691) !important;
     display: inline-block;
     margin: 0 !important;
     padding: .5em 0;
