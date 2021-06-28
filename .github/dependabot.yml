@@ -12,4 +12,4 @@ updates:
       - "npm"
       - "dependencies"
     commit-message:
-      prefix: "⬆️  [Update npm]"
+      prefix: "⬆️ [Update npm]"
