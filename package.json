@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel watch",
     "build": "rollup -c",
-    "lint": "lit-analyzer 'components/**/*.js' && eslint src/ --quiet",
+    "lint": "lit-analyzer 'components/**/*.js' && eslint components/ --quiet",
     "watch": "rollup -c -w"
   },
   "dependencies": {
