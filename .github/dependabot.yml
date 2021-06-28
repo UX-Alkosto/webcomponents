@@ -1,9 +1,16 @@
 version: 2
 updates:
-  - package-ecosystem: "npm" 
+  - package-ecosystem: "npm"
+    versioning-strategy: widen
+    target-branch: "develop"
+    reviewers: 
+      - "miguelcolmenares"
     directory: "/"
     schedule:
       interval: "daily"
     labels:
       - "npm"
       - "dependencies"
+    commit-message:
+      # Prefix all commit messages with "npm"
+      prefix: "⬆️ [Update] npm"
