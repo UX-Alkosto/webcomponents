@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { common } from '../common';
 import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 
 export class Slider extends LitElement {
@@ -39,7 +40,7 @@ export class Slider extends LitElement {
         this['mobile-bullets'] = false;
         this['mobile-items'] = 2;
         this.peek = 0;
-        this.width = 1204;
+        this.width = common.defaultMaxWidth;
     }
     attributeChangedCallback(name, oldval, newval) {
         super.attributeChangedCallback(name, oldval, newval);
