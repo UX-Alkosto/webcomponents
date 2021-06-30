@@ -1,10 +1,10 @@
-import{css} from'lit'
-const styles= css`a {
-    color: var(--main-azul) !important;
-}
+import{css, unsafeCSS} from'lit'
+import { common } from '../../common';
+const styles= css`
 
 
 h3 {
+    color: var(--primary-color2, #004691) !important;
     font-size: 18px;
 }
 
@@ -12,44 +12,47 @@ details {
     width: 100%;
     min-height: 5px;
     padding: 25px 15px 25px 45px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     position: relative;
-    font-size: 22px;
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 15px;
     box-sizing: border-box;
     transition: all .3s;
 }
 
-details+details {
-    margin-top: 20px;
-}
 
-:host([open]) {
+details[open] {
     min-height: 50px;
     background-color: #ffffff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
 }
 
-details p,
-details ul {
-    color: #444444;
+::slotted(ul) {
+    color: var(--text-color1, #444444);
     font-weight: 300;
     font-size: 14px;
     line-height: 24px;
+    margin-left: 10px;
     padding: 0px;
 }
 
-details ul li:before {
+::slotted(p) {
+    color: var(--text-color1, #444444);
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
+    line-height: 1.572em;
+}
+
+::slotted(li:before) {
     content: "•";
-    color: var(--main-naranja);
+    color: var(--primary-color1);
     margin-right: 10px;
     font-size: 20px;
 }
 
-details ul {
-    margin-left: 10px;
-    list-style: none;
+::slotted(a){
+    color: var(--link-text-color, #444444) !important;
+    text-decoration: underline;
 }
 
 summary {
@@ -59,30 +62,26 @@ summary {
     cursor: pointer;
 }
 
-summary .tit_pregunta {
-    color: var(--main-azul);
-    font-weight: bold !important;
-    text-align: left;
-    font-size: 18px;
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+// summary .tit_pregunta {
+//     color: var(--main-azul);
+//     font-weight: bold !important;
+//     text-align: left;
+//     font-size: 18px;
+//     width: 90%;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+// }
 
-details p,
-details ul {
-    color: #444444;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 24px;
-    padding: 0px;
-}
+// details p,
+// details ul {
+//     color: #444444;
+//     font-weight: 300;
+//     font-size: 14px;
+//     line-height: 24px;
+//     padding: 0px;
+// }
 
-summary ul li a,
-summary details ul li a {
-    color: var(--main-azul) !important;
-    font-weight: bold;
-}
+
 
 summary:focus {
     outline: none !important;

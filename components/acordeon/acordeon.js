@@ -19,7 +19,7 @@ export class Acordeon extends LitElement {
         this.open = isTrueSet(this.getAttribute('open'));
     }
     render(){
-        return html`<details ${this.open}>
+        return html`<details ?open="${this.open}">
         <summary>
             <h3 class="tit_pregunta">${this.title}</h3>
             <svg class="control-icon control-icon-expand" width="40" height="40" role="presentation">
