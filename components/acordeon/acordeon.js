@@ -1,19 +1,19 @@
-import { LitElement, html } from "lit";
-import { styles } from "./css";
+import { LitElement, html } from 'lit';
+import { styles } from './css';
 export class Acordeon extends LitElement {
     constructor(){
-        super()
-        this.open=false
-        this.title="Escriba un título"
+        super();
+        this.open=false;
+        this.title='Escriba un título';
     }
     static get properties() {
         return {
             open: {type:String,reflect:true},
             title: {type:String}
-        }
+        };
     }
     static get styles(){
-        return styles
+        return styles;
     }
     firstUpdated() {
         this.open = isTrueSet(this.getAttribute('open'));
@@ -27,7 +27,7 @@ export class Acordeon extends LitElement {
         </summary>
         <hr class="linea">
         <slot></slot>
-    </details>`
+    </details>`;
     }
 }
 function isTrueSet(value = '') {

@@ -1,4 +1,4 @@
-import{css, unsafeCSS} from'lit'
+import{css, unsafeCSS} from'lit';
 import { common } from '../../common';
 const styles= css`
 
@@ -195,5 +195,5 @@ details .linea {
     details ul {
         margin: 0px;
     }
-}` 
-export {styles}
+}`; 
+export {styles};
