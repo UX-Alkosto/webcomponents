@@ -1,87 +1,66 @@
-import{css} from'lit'
-const styles= css`a {
-    color: var(--main-azul) !important;
-}
+import{css, unsafeCSS} from'lit';
+import { common } from '../../common';
+const styles= css`
 
 
 h3 {
+    color: var(--primary-color2, #004691) !important;
     font-size: 18px;
+    margin: 0;
 }
 
 details {
     width: 100%;
     min-height: 5px;
     padding: 25px 15px 25px 45px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     position: relative;
-    font-size: 22px;
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
     border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 15px;
+    border-radius: 10px;
     box-sizing: border-box;
     transition: all .3s;
 }
 
-details+details {
-    margin-top: 20px;
-}
 
-:host([open]) {
+details[open] {
     min-height: 50px;
     background-color: #ffffff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
 }
 
-details p,
-details ul {
-    color: #444444;
+::slotted(ul) {
+    color: var(--text-color1, #444444);
     font-weight: 300;
     font-size: 14px;
     line-height: 24px;
+    margin-left: 20px;
     padding: 0px;
 }
 
-details ul li:before {
-    content: "•";
-    color: var(--main-naranja);
-    margin-right: 10px;
-    font-size: 20px;
+::slotted(p) {
+    color: var(--text-color1, #444444);
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
+    line-height: 1.572em;
 }
 
-details ul {
-    margin-left: 10px;
-    list-style: none;
+::slotted(li:before) {
+    content: "•";
+    color: var(--primary-color1, #DD171B) !important;
+    margin-right: 10px;
+    font-size: 60px;
+}
+
+::slotted(a){
+    color: var(--link-text-color, #444444) !important;
+    text-decoration: underline;
 }
 
 summary {
-    display: flex !important;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
-}
-
-summary .tit_pregunta {
-    color: var(--main-azul);
-    font-weight: bold !important;
-    text-align: left;
-    font-size: 18px;
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-details p,
-details ul {
-    color: #444444;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 24px;
-    padding: 0px;
-}
-
-summary ul li a,
-summary details ul li a {
-    color: var(--main-azul) !important;
-    font-weight: bold;
+    display: flex !important;
+    position: relative; 
 }
 
 summary:focus {
@@ -101,25 +80,35 @@ summary::-webkit-details-marker {
     right: 10px;
 }
 
-.control-icon-close {
+.collapse {
     display: none;
 }
 
-:host([open]) .control-icon-close {
+details[open] .collapse {
     display: initial;
     transition: .3s ease;
 }
 
-:host([open]) .control-icon-expand {
+details[open] .expand {
     display: none;
 }
 
-:host([open]) summary:hover::after {
+details[open] summary:hover::after {
     animation: pulse 1s ease;
 }
 
-:host([open]) .tit_pregunta {
-    margin-bottom: 20px !important;
+k-icon {
+    font-size: 20px;
+    line-height: 20px;
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+details .linea {
+    background-color: #E0E0E0;
+    border: none;
+    height: 1px;
 }
 
 @keyframes pulse {
@@ -174,8 +163,12 @@ summary::-webkit-details-marker {
 }
 
 @media only screen and (max-width: 414px) {
+    h3 {
+        font-size: 14px;
+    }
     details {
         padding: 15px 15px 15px 15px;
+        width: 90%;
     }
 
     details p,
@@ -202,5 +195,5 @@ summary::-webkit-details-marker {
     details ul {
         margin: 0px;
     }
-}` 
-export {styles}
+}`; 
+export {styles};

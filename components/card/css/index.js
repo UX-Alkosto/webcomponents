@@ -29,11 +29,28 @@ const styles = css`:host{
     text-align: center;
 }
 :host([type=icon-item]){
+    align-items: center;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 4rem;
 }
 
-:host([type=icon-item]) ::slotted(k-icon){
-    border: solid 1px var(--primary-color1);
+:host([type=icon-item]) ::slotted(h3){
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+:host([type=icon-item]) ::slotted(p) {
+    margin: 0 0 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+:host([type=icon-item][variant=outline]) ::slotted(k-icon){
+    border: solid 2px var(--primary-color1);
     border-radius: 50px;
     font-size: 40px;
     height: 90px;
@@ -45,6 +62,23 @@ const styles = css`:host{
     justify-content: center;
     background-color: #ffffff;
 }
+
+:host([type=icon-item][variant=fill]) ::slotted(k-icon){
+    border: none;
+    border-radius: 50px;
+    color: var(--primary-color2, #959595);
+    font-size: 40px;
+    height: 90px;
+    margin-top: -30px;
+    width: 90px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: var(--card-icon-background-fill, #F5F5F5);
+}
+
+
 :host([type=product-item]) {
     margin-top: 2rem;
     text-align: center;

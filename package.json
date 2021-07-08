@@ -1,12 +1,11 @@
 {
   "name": "webcomponents",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel watch",
-    "build": "rollup -c",
-    "lint": "lit-analyzer 'components/**/*.js' && eslint components/ --quiet",
+    "build": "eslint components/ --fix && rollup -c",
+    "lint": "eslint components/ --quiet",
     "watch": "rollup -c -w"
   },
   "dependencies": {
@@ -19,7 +18,7 @@
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "@types/node": "^15.0.1",
+    "@types/node": "^16.0.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "babel-jest": "^27.0.5",
     "chai": "^4.3.4",
@@ -29,7 +28,6 @@
     "karma": "^6.3.2",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^2.0.1",
-    "lit-analyzer": "^1.2.1",
     "mocha": "^9.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",

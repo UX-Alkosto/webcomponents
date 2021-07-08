@@ -1,1 +1,1 @@
-export {Acordeon} from'./acordeon'
+export {Acordeon} from'./acordeon';

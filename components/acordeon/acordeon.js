@@ -1,36 +1,33 @@
-import { LitElement, html } from "lit";
-import { styles } from "./css";
+import { LitElement, html } from 'lit';
+import { styles } from './css';
 export class Acordeon extends LitElement {
     constructor(){
-        super()
-        this.open=false
-        this.title="Escriba un título"
+        super();
+        this.open=false;
+        this.title='Escriba un título';
     }
     static get properties() {
         return {
             open: {type:String,reflect:true},
             title: {type:String}
-        }
+        };
     }
     static get styles(){
-        return styles
+        return styles;
     }
     firstUpdated() {
         this.open = isTrueSet(this.getAttribute('open'));
     }
     render(){
-        return html`<details ${this.open}>
+        return html`<details ?open="${this.open}">
         <summary>
             <h3 class="tit_pregunta">${this.title}</h3>
-            <svg class="control-icon control-icon-expand" width="40" height="40" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
-            </svg>
-            <svg class="control-icon control-icon-close" width="40" height="40" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
-            </svg>
+            <k-icon class="expand" icon="alk-icon-abajo"></k-icon>
+            <k-icon class="collapse" icon="alk-icon-cerrar1"></k-icon>
         </summary>
+        <hr class="linea">
         <slot></slot>
-    </details>`
+    </details>`;
     }
 }
 function isTrueSet(value = '') {

@@ -44,7 +44,6 @@ const config = {
     preserveEntrySignatures: false
 };
 
-// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV !== 'development') {
     config.plugins.push(terser({
         module: true,
