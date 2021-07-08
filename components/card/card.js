@@ -9,7 +9,8 @@ export class Card extends LitElement {
             loaded: { type: Boolean, reflect: true },
             type: { type: String },
             target: { type: String },
-            shadow: { type: Boolean, reflect: true }
+            shadow: { type: Boolean, reflect: true },
+            variant: { type: String, reflect: true }
         };
     }
     static get styles() {
@@ -22,6 +23,7 @@ export class Card extends LitElement {
         this.target = '_self';
         this.type = 'default';
         this.shadow = true;
+        this.variant = 'outline';
         this.addEventListener('click', this._handleClick);
     }
     render() {

@@ -65,6 +65,7 @@
             --colorbox-miniCart: auto;
             --field-color-success: #004691;
             --field-color-error: #E63027;
+            --card-icon-background-fill: #EDF1F6;
         }
 
         * {
@@ -287,21 +288,30 @@
             <k-card type="icon-item">
                 <k-icon icon="alk-icon-car-audio"></k-icon>
                 <h3>Título</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sagittis volutpat auctor rutrum aenean duis, tortor pulvinar gravida quisque est aptent.</p>
+                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
             </k-card>
-            <k-card type="icon-item">
+            <k-card type="icon-item" variant="fill">
                 <k-icon icon="alk-icon-car-audio"></k-icon>
                 <h3>Título</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
             </k-card>
             <k-card type="icon-item">
                 <k-icon icon="alk-icon-car-audio"></k-icon>
                 <h3>Título</h3>
             </k-card>
         </k-grid>
-        <k-acordeon title="Probando título" open="true">
-            <p>Probando contenido</p>
+        <!-- componente acordeon -->
+        <k-acordeon title="Ejemplo acordeón uno abierto con título largo, Lorem ipsum dolor sit amet consecteturt" open="true">
+            <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit habitasse cursus aenean libero, varius sociosqu volutpat etiam. Parturient molestie commodo enim pulvinar, convallis semper sem.</p>
+            <a href="https://www.alkosto.com/" target="_blank">Este es el ejemplo de un link</a>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur, adipiscing elit neque faucibus.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipiscing elit augue, euismod interdum tortor phasellus est mollis nibh, non aliquet torquent rutrum ornare dictum eget. Bibendum commodo duis sapien imperdiet mattis, magnis class fringilla urna.</li>
+            </ul>
         </k-acordeon>
-        <k-acordeon title="Probando título" >
-            <p>Probando contenido</p>
+        <k-acordeon title="Ejemplo acordeón dos cerrado" >
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis varius sollicitudin vivamus blandit cum vehicula sem, nam curae interdum primis nibh ante fringilla ullamcorper viverra justo id parturient elementum. Quam gravida vel libero venenatis aliquet molestie tempor ligula semper placerat dapibus, felis etiam facilisi at fusce fames vulputate proin in aliquam, dictum mus facilisis nam eget morbi imperdiet fermentum praesent lacinia. Ante aptent tempor proin nam cum at ullamcorper pulvinar consequat habitant euismod dignissim tortor viverra erat, purus est nulla a cubilia porta turpis posuere sagittis quisque eleifend senectus neque nibh.</p>
         </k-acordeon>
     </div>
 </body>
