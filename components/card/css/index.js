@@ -128,6 +128,8 @@ const styles = css`:host{
 }
 
 :host([type=full-image-width]) ::slotted(img) {
+    border-top-left-radius: var(--k-card-border-radius,4px);
+    border-top-right-radius: var(--k-card-border-radius,4px);
     width: 100%;
 }
 
