@@ -122,6 +122,33 @@ const styles = css`:host{
     line-height: 1.125em;
     margin: 0;
 }
+
+:host([type=full-image-width]) {
+    padding: 0 0 1rem 0;
+}
+
+:host([type=full-image-width]) ::slotted(img) {
+    width: 100%;
+}
+
+:host([type=full-image-width]) ::slotted(h3),
+:host([type=full-image-width]) ::slotted(p) {
+    padding: 0 1rem;
+}
+
+:host([type=full-image-width]) ::slotted(k-link) {
+    display: inline-flex;
+    justify-content: center;
+    width:100%;
+}
+:host([type=full-image-width]) ::slotted(k-button) {
+    display:flex;
+    margin: 0 1rem;
+    width: auto;
+}
+
+
+
 @media screen and (min-width: 768px) {
     ::slotted(p) {
         display: block;
