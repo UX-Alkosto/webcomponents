@@ -1,5 +1,6 @@
 import { Acordeon } from './components/acordeon';
 import { Banner } from './components/banner';
+import { BlogArticle } from './components/blog-article';
 import { Button } from './components/button';
 import { Card } from './components/card';
 import { Grid } from './components/grid';
@@ -10,6 +11,7 @@ import { TitleUnderline } from './components/title-underline';
 
 window.customElements.define('k-acordeon', Acordeon);
 window.customElements.define('k-banner', Banner);
+window.customElements.define('k-blog-article', BlogArticle);
 window.customElements.define('k-button', Button);
 window.customElements.define('k-card', Card);
 window.customElements.define('k-grid', Grid);
