@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,7 +80,13 @@
             margin: 0;
             padding: 0;
         }
-        h1,h2,h3,h4,h5,h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--primary-color2);
         }
 
@@ -99,25 +106,35 @@
     <div class="container">
         <h2>Banners</h2>
         <!-- Banners -->
-        <k-banner type="left-cut" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-1.png" height="180">
+        <k-banner type="left-cut"
+            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-1.png"
+            height="180">
             <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
         </k-banner>
-        <k-banner type="right-cut" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-1.png" height="180">
+        <k-banner type="right-cut"
+            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-1.png"
+            height="180">
             <h2>Realiza tus pagos de forma fácil, segura y sin costo adicional…</h2>
         </k-banner>
-        <k-banner type="left" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-2.png" height="280">
+        <k-banner type="left"
+            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-2.png"
+            height="280">
             <h3>Conéctate desde casa</h3>
             <p>Extensores de red, Router, cables y herramientas. <br>
                 Los mejores productos para una conectividad avanzada a solo un clic.</p>
             <k-button variant="outline" href="#">Ver todos los productos</k-button>
         </k-banner>
-        <k-banner type="right" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-2.png" height="280">
+        <k-banner type="right"
+            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-2.png"
+            height="280">
             <h3>Conéctate desde casa</h3>
             <p>Extensores de red, Router, cables y herramientas. <br>
                 Los mejores productos para una conectividad avanzada a solo un clic.</p>
             <k-button variant="outline" href="#">Ver todos los productos</k-button>
         </k-banner>
-        <k-banner type="full" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-3.png" height="280">
+        <k-banner type="full"
+            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/banner-3.png"
+            height="280">
             <p>Déjate sorprender por Ktronix, un espectáculo de conectividad y emoción.</p>
             <p><strong>Disfruta del verdadero placer de la tecnología.</strong></p>
             <k-button>Ver todos los productos</k-button>
@@ -153,7 +170,8 @@
         <h2>Carrousel</h2>
         <!-- Brand slider -->
         <h3>¡Las mejores marcas en un solo lugar!</h3>
-        <k-slider arrows="true" bullets="true" desktop-items="7" mobile-items="3" peek="100" style="--k-slider-background-color: #f5f5f5;">
+        <k-slider arrows="true" bullets="true" desktop-items="7" mobile-items="3" peek="100"
+            style="--k-slider-background-color: #f5f5f5;">
             <div class="k-slider__slide">
                 <img loading="lazy" title="Samsung" src="assets/images/Samsung.svg" />
             </div>
@@ -174,204 +192,267 @@
             </div>
         </k-slider>
         <!-- End Brand slider -->
-        <!-- Product slider -->
-        <k-slider arrows="true" desktop-items="4" mobile-items="1">
-            <div class="k-slider__slide">
+        <!-- Gallery slider -->
+        <k-gallery arrows="true" bullets="true" desktop-items="1" peek="280" mobile-items="1">
+            <div class="k-gallery__slide">
+                <img loading="lazy" title="Samsung"
+                    src="https://cdn.statically.io/gh/UX-Alkosto/webcomponents/master/assets/images/banner-2.png" height="400"/>
+            </div>
+            <div class="k-gallery__slide">
+                <img loading="lazy" title="Samsung"
+                    src="https://cdn.statically.io/gh/UX-Alkosto/webcomponents/master/assets/images/banner-2.png" height="400"/>
+            </div>
+            <div class="k-gallery__slide">
+                <img loading="lazy" title="Samsung"
+                    src="https://cdn.statically.io/gh/UX-Alkosto/webcomponents/master/assets/images/banner-2.png" height="400"/>
+            </div>
+        </k-gallery>
+            <!-- End Gallery slider -->
+            <!-- Product slider -->
+            <k-slider arrows="true" desktop-items="4" mobile-items="1">
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png"
+                            alt="Lavadoras y secadores">
+                        <h3>Lavadoras y secadores</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png"
+                            alt="Cocina">
+                        <h3>Cocina</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png"
+                            alt="Climatización">
+                        <h3>Climatización</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png"
+                            alt="Lavadoras y secadores">
+                        <h3>Lavadoras y secadores</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png"
+                            alt="Cocina">
+                        <h3>Cocina</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card type="product-item">
+                        <img loading="lazy"
+                            src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png"
+                            alt="Climatización">
+                        <h3>Climatización</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
+                    </k-card>
+                </div>
+            </k-slider>
+            <!-- End Product slider -->
+            <!-- Category slider -->
+            <k-slider desktop-arrows="false" mobile-arrows="true" desktop-items="5" mobile-items="2">
+                <div class="k-slider__slide">
+                    <k-card href="#" title="Neveras" type="category-item">
+                        <k-icon icon="alk-icon-refrigeracion"></k-icon>
+                        <p>Neveras</p>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card href="#" title="Nevecones" type="category-item">
+                        <k-icon icon="alk-icon-nevecon"></k-icon>
+                        <p>Nevecones</p>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card href="#" title="Congeladores" type="category-item">
+                        <k-icon icon="alk-icon-congelador"></k-icon>
+                        <p>Congeladores</p>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card href="#" title="Minibares" type="category-item">
+                        <k-icon icon="alk-icon-minibar"></k-icon>
+                        <p>Minibares</p>
+                    </k-card>
+                </div>
+                <div class="k-slider__slide">
+                    <k-card href="#" title="Dispensadores de agua" type="category-item">
+                        <k-icon icon="alk-icon-dispensador"></k-icon>
+                        <p>Dispensadores de agua</p>
+                    </k-card>
+                </div>
+            </k-slider>
+            <!-- End Category slider -->
+            <hr>
+            <!-- Grid -->
+            <h2>Grid</h2>
+            <k-grid desktop-columns="3" width="900">
                 <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png" alt="Lavadoras y secadores">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png"
+                        alt="Lavadoras y secadores" width="100" height="100" />
                     <h3>Lavadoras y secadores</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
                 <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png" alt="Cocina">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png"
+                        alt="Cocina" width="100" height="100" />
                     <h3>Cocina</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
                 <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png" alt="Climatización">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png"
+                        alt="Climatización" width="100" height="100" />
                     <h3>Climatización</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
                 <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png" alt="Lavadoras y secadores">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png"
+                        alt="Lavadoras y secadores" width="100" height="100" />
                     <h3>Lavadoras y secadores</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
                 <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png" alt="Cocina">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png"
+                        alt="Cocina" width="100" height="100" />
                     <h3>Cocina</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
-                <k-card type="product-item">
-                    <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png" alt="Climatización">
-                    <h3>Climatización</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+            </k-grid>
+            <!-- End Grid -->
+            <hr>
+            <h2>Decorativos textos</h2>
+            <k-title-underline type="center">
+                <h3>Considera los complementos</h3>
+            </k-title-underline>
+            <k-title-underline>
+                <h3>Beneficios</h3>
+            </k-title-underline>
+            <k-title-underline type="right">
+                <h3>Beneficios</h3>
+            </k-title-underline>
+            <hr>
+            <k-grid desktop-columns="3" mobile-columns="1">
+                <k-card type="icon-item">
+                    <k-icon icon="alk-icon-car-audio"></k-icon>
+                    <h3>Título</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sagittis volutpat auctor rutrum aenean
+                        duis, tortor pulvinar gravida quisque est aptent.</p>
                     <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-        </k-slider>
-        <!-- End Product slider -->
-        <!-- Category slider -->
-        <k-slider desktop-arrows="false" mobile-arrows="true" desktop-items="5" mobile-items="2">
-            <div class="k-slider__slide">
-                <k-card href="#" title="Neveras" type="category-item">
-                    <k-icon icon="alk-icon-refrigeracion"></k-icon>
-                    <p>Neveras</p>
+                <k-card type="icon-item" variant="fill">
+                    <k-icon icon="alk-icon-car-audio"></k-icon>
+                    <h3>Título</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
-                <k-card href="#" title="Nevecones" type="category-item">
-                    <k-icon icon="alk-icon-nevecon"></k-icon>
-                    <p>Nevecones</p>
+                <k-card type="icon-item">
+                    <k-icon icon="alk-icon-car-audio"></k-icon>
+                    <h3>Título</h3>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
-                <k-card href="#" title="Congeladores" type="category-item">
-                    <k-icon icon="alk-icon-congelador"></k-icon>
-                    <p>Congeladores</p>
+            </k-grid>
+            <!-- componente acordeon -->
+            <k-acordeon title="Ejemplo acordeón uno abierto con título largo, Lorem ipsum dolor sit amet consecteturt"
+                open="true">
+                <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit habitasse cursus aenean libero, varius
+                    sociosqu volutpat etiam. Parturient molestie commodo enim pulvinar, convallis semper sem.</p>
+                <a href="#" target="_blank">Este es el ejemplo de un link</a>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipiscing elit neque faucibus.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipiscing elit augue, euismod interdum tortor phasellus
+                        est mollis nibh, non aliquet torquent rutrum ornare dictum eget. Bibendum commodo duis sapien
+                        imperdiet mattis, magnis class fringilla urna.</li>
+                </ul>
+            </k-acordeon>
+            <k-acordeon title="Ejemplo acordeón dos cerrado">
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis varius sollicitudin vivamus blandit
+                    cum vehicula sem, nam curae interdum primis nibh ante fringilla ullamcorper viverra justo id
+                    parturient elementum. Quam gravida vel libero venenatis aliquet molestie tempor ligula semper
+                    placerat dapibus, felis etiam facilisi at fusce fames vulputate proin in aliquam, dictum mus
+                    facilisis nam eget morbi imperdiet fermentum praesent lacinia. Ante aptent tempor proin nam cum at
+                    ullamcorper pulvinar consequat habitant euismod dignissim tortor viverra erat, purus est nulla a
+                    cubilia porta turpis posuere sagittis quisque eleifend senectus neque nibh.</p>
+            </k-acordeon>
+            <!-- Ejemplo card con solo imagen y texto -->
+            <k-grid desktop-columns="3" mobile-columns="1">
+                <k-card type="full-image-width">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png"
+                        alt="">
+                    <h3>Recorre nuevos caminos</h3>
+                    <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor
+                        calidad.</p>
+                    <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que
+                        esto corre por nuestra cuenta.</p>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
-                <k-card href="#" title="Minibares" type="category-item">
-                    <k-icon icon="alk-icon-minibar"></k-icon>
-                    <p>Minibares</p>
+                <k-card type="full-image-width">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png"
+                        alt="">
+                    <h3>Recorre nuevos caminos</h3>
+                    <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor
+                        calidad.</p>
+                    <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que
+                        esto corre por nuestra cuenta.</p>
+                    <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
                 </k-card>
-            </div>
-            <div class="k-slider__slide">
-                <k-card href="#" title="Dispensadores de agua" type="category-item">
-                    <k-icon icon="alk-icon-dispensador"></k-icon>
-                    <p>Dispensadores de agua</p>
+                <k-card type="full-image-width">
+                    <img loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png"
+                        alt="">
+                    <h3>Recorre nuevos caminos</h3>
+                    <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor
+                        calidad.</p>
+                    <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que
+                        esto corre por nuestra cuenta.</p>
+                    <k-button variant="outline" href="#">Ver todos los productos</k-button>
                 </k-card>
-            </div>
-        </k-slider>
-        <!-- End Category slider -->
-        <hr>
-        <!-- Grid -->
-        <h2>Grid</h2>
-        <k-grid desktop-columns="3" width="900">
-            <k-card type="product-item">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png" alt="Lavadoras y secadores" width="100" height="100" />
-                <h3>Lavadoras y secadores</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="product-item">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png" alt="Cocina" width="100" height="100" />
-                <h3>Cocina</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="product-item">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-3%402x.png" alt="Climatización" width="100" height="100" />
-                <h3>Climatización</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="product-item">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-1%402x.png"
-                    alt="Lavadoras y secadores" width="100" height="100" />
-                <h3>Lavadoras y secadores</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="product-item">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/product-2%402x.png"
-                    alt="Cocina" width="100" height="100" />
-                <h3>Cocina</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-        </k-grid>
-        <!-- End Grid -->
-        <hr>
-        <h2>Decorativos textos</h2>
-        <k-title-underline type="center">
-            <h3>Considera los complementos</h3>
-        </k-title-underline>
-        <k-title-underline>
-            <h3>Beneficios</h3>
-        </k-title-underline>
-        <k-title-underline type="right">
-            <h3>Beneficios</h3>
-        </k-title-underline>
-        <hr>
-        <k-grid desktop-columns="3" mobile-columns="1">
-            <k-card type="icon-item">
-                <k-icon icon="alk-icon-car-audio"></k-icon>
-                <h3>Título</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sagittis volutpat auctor rutrum aenean duis, tortor pulvinar gravida quisque est aptent.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="icon-item" variant="fill">
-                <k-icon icon="alk-icon-car-audio"></k-icon>
-                <h3>Título</h3>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-            </k-card>
-            <k-card type="icon-item">
-                <k-icon icon="alk-icon-car-audio"></k-icon>
-                <h3>Título</h3>
-            </k-card>
-        </k-grid>
-        <!-- componente acordeon -->
-        <k-acordeon title="Ejemplo acordeón uno abierto con título largo, Lorem ipsum dolor sit amet consecteturt" open="true">
-            <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit habitasse cursus aenean libero, varius sociosqu volutpat etiam. Parturient molestie commodo enim pulvinar, convallis semper sem.</p>
-            <a href="#" target="_blank">Este es el ejemplo de un link</a>
-            <ul>
-                <li>Lorem ipsum dolor sit amet consectetur, adipiscing elit neque faucibus.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipiscing elit augue, euismod interdum tortor phasellus est mollis nibh, non aliquet torquent rutrum ornare dictum eget. Bibendum commodo duis sapien imperdiet mattis, magnis class fringilla urna.</li>
-            </ul>
-        </k-acordeon>
-        <k-acordeon title="Ejemplo acordeón dos cerrado" >
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis varius sollicitudin vivamus blandit cum vehicula sem, nam curae interdum primis nibh ante fringilla ullamcorper viverra justo id parturient elementum. Quam gravida vel libero venenatis aliquet molestie tempor ligula semper placerat dapibus, felis etiam facilisi at fusce fames vulputate proin in aliquam, dictum mus facilisis nam eget morbi imperdiet fermentum praesent lacinia. Ante aptent tempor proin nam cum at ullamcorper pulvinar consequat habitant euismod dignissim tortor viverra erat, purus est nulla a cubilia porta turpis posuere sagittis quisque eleifend senectus neque nibh.</p>
-        </k-acordeon>
-        <!-- Ejemplo card con solo imagen y texto -->
-        <k-grid desktop-columns="3" mobile-columns="1">
-            <k-card type="full-image-width">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png" alt="">
-                <h3>Recorre nuevos caminos</h3>
-                <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor calidad.</p>
-                <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que esto corre por nuestra cuenta.</p>
-            </k-card>
-            <k-card type="full-image-width">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png" alt="">
-                <h3>Recorre nuevos caminos</h3>
-                <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor calidad.</p>
-                <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que esto corre por nuestra cuenta.</p>
-                <k-link href="#" title="Ver productos" icon="alk-icon-derecha">Ver productos</k-link>
-            </k-card>
-            <k-card type="full-image-width">
-                <img loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png" alt="">
-                <h3>Recorre nuevos caminos</h3>
-                <p>Encuentra llantas para carros, camionetas, camiones, buses y motos al mejor precio y de la mejor calidad.</p>
-                <p><strong>No te preocupes por la instalación,</strong> busca el punto autorizado más cercano que esto corre por nuestra cuenta.</p>
-                <k-button variant="outline" href="#">Ver todos los productos</k-button>
-            </k-card>
-        </k-grid>
-        <k-grid desktop-columns="3" mobile-columns="1">
-            <k-blog-article>
-                <img slot="image" loading="lazy" src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png" alt="">
-                <k-button slot="image" href="#">Leer más..</k-button>
-                <span slot="text">NOVEDADES</span>
-                <h2 slot="text">Educational television during COVID-19</h2>
-                <p slot="text">Countries around the world have responded to coronavirus (COVID19) driven school closures by adopting remote learning approaches.</p>
-                <p slot="text" class="author_date">By Jhon Doe | 12 Junio 2020 </p>
-            </k-blog-article>
-        </k-grid>
+            </k-grid>
+            <k-grid desktop-columns="3" mobile-columns="1">
+                <k-blog-article>
+                    <img slot="image" loading="lazy"
+                        src="https://cdn.statically.io/img/ux-alkosto.github.io/f=auto,q=75/webcomponents/assets/images/img-familia-carro.png"
+                        alt="">
+                    <k-button slot="image" href="#">Leer más..</k-button>
+                    <span slot="text">NOVEDADES</span>
+                    <h2 slot="text">Educational television during COVID-19</h2>
+                    <p slot="text">Countries around the world have responded to coronavirus (COVID19) driven school
+                        closures by adopting remote learning approaches.</p>
+                    <p slot="text" class="author_date">By Jhon Doe | 12 Junio 2020 </p>
+                </k-blog-article>
+            </k-grid>
     </div>
 </body>
+
 </html>
