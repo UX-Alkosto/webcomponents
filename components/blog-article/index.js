@@ -1,5 +1,4 @@
 import { html,LitElement } from 'lit';
-import { common } from '../common';
 import { styles } from './css';
 
 export class BlogArticle extends LitElement {
@@ -9,8 +8,7 @@ export class BlogArticle extends LitElement {
             loaded: { type: Boolean, reflect: true },
             type: { type: String },
             target: { type: String },
-            shadow: { type: Boolean, reflect: true },
-            variant: { type: String, reflect: true }
+            shadow: { type: Boolean, reflect: true }
         };
     }
     static get styles() {
@@ -23,7 +21,6 @@ export class BlogArticle extends LitElement {
         this.target = '_self';
         this.type = 'default';
         this.shadow = true;
-        this.variant = 'outline';
         this.addEventListener('click', this._handleClick);
     }
     render() {
