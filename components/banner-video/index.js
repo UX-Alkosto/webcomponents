@@ -28,9 +28,9 @@ export class BannerVideo extends LitElement {
     render() {
         this.loaded = true;
         return html`${this._dynamicStyles()}<div class="container">
-                ${this.type == 'left' || this.type == 'left-cut' || this.type == 'full' ? this._getImage({ height: this.height, src: this.src, type: this.type }) : ''}
+                ${this.type == 'left' || this.type == 'left-cut' || this.type == 'full' ? this._getIframe({ height: this.height, src: this.src, type: this.type }) : ''}
                 <slot class="content"></slot>
-                ${this.type == 'right' || this.type == 'right-cut' ? this._getImage({ height: this.height, src: this.src, type: this.type }) : ''}
+                ${this.type == 'right' || this.type == 'right-cut' ? this._getIframe({ height: this.height, src: this.src, type: this.type }) : ''}
             </div>`;
     }
     _dynamicStyles() {
@@ -42,10 +42,10 @@ export class BannerVideo extends LitElement {
             }
         </style>`;
     }
-    _getImage({height, src, type}) {
+    _getIframe({height, src, type}) {
         if (!src.length) return;
         return html`<section class="${type}">
-            <img height="${height}" src="${src}" />
+            <iframe allowfullscreen frameborder="0" height="${height}" src="${src}"> </iframe>
         </section>`;
     }
 }

@@ -87,11 +87,11 @@ section,
 .right-cut {
     flex-basis: 100%;
 }
-.full img,
-.left img,
-.left-cut img,
-.right img,
-.right-cut img {
+.full iframe,
+.left iframe,
+.left-cut iframe,
+.right iframe,
+.right-cut iframe {
     max-width: 100%;
     object-fit: cover;
     width: 100%;
@@ -128,14 +128,14 @@ section,
         margin-left: 0;
         filter: drop-shadow(10px 0 0 var(--primary-color2, #004691));
     }
-    .left-cut img {
+    .left-cut iframe {
         clip-path: polygon(0 0, 0 100%, 90% 100%, 100% 0);
     }
     .right-cut {
         margin-right: 0;
         filter: drop-shadow(-10px 0 0 var(--primary-color2, #004691));
     }
-    .right-cut img {
+    .right-cut iframe {
         clip-path: polygon(0 0, 10% 100%, 100% 100%, 100% 0);
     }
 }`;
