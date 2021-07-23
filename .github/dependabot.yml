@@ -3,11 +3,11 @@ updates:
   - package-ecosystem: "npm"
     versioning-strategy: widen
     target-branch: "develop"
-    reviewers: 
+    reviewers:
       - "miguelcolmenares"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - "npm"
       - "dependencies"
