@@ -1,10 +1,9 @@
 import { html } from 'lit';
 import { Banner } from '../banner';
-import { styles as bannerStyles } from '../banner/css';
 import { styles } from './css';
 export class BannerVideo extends Banner {
     static get styles() {
-        return [bannerStyles, styles];
+        return [super.styles, styles];
     }
     constructor() {
         super();
@@ -20,7 +19,7 @@ export class BannerVideo extends Banner {
     _getIframe({height, src, type}) {
         if (!src.length) return;
         return html`<section class="${type}">
-            <iframe allowfullscreen frameborder="0" height="${height}" src="${src}"> </iframe>
+            <iframe allowfullscreen frameborder="0" height="${height}" src="${src}" loading="lazy"> </iframe>
         </section>`;
     }
 }
