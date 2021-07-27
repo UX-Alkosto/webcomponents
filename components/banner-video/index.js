@@ -1,29 +1,12 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
+import { Banner } from '../banner';
 import { styles } from './css';
-export class BannerVideo extends LitElement {
-    static get properties() {
-        return {
-            loaded: { type: Boolean, reflect: true },
-            height: { type: Number },
-            src: { type: String },
-            type: { type: String },
-            width: { type: Number }
-        };
-    }
+export class BannerVideo extends Banner {
     static get styles() {
-        return styles;
+        return [super.styles, styles];
     }
     constructor() {
         super();
-        this.height = 0;
-        this.width = null;
-        this.loaded = false;
-        this.src = '';
-        this.type = 'left';
-    }
-    attributeChangedCallback(name, oldval, newval) {
-        super.attributeChangedCallback(name, oldval, newval);
-        this.dispatchEvent(new Event(`${name}-changed`));
     }
     render() {
         this.loaded = true;
@@ -33,19 +16,10 @@ export class BannerVideo extends LitElement {
                 ${this.type == 'right' || this.type == 'right-cut' ? this._getIframe({ height: this.height, src: this.src, type: this.type }) : ''}
             </div>`;
     }
-    _dynamicStyles() {
-        const width = `${(this.width === null) ? 'flex-basis: 50% !important;' : `flex-basis: ${this.width}px !important;`}`;
-        return html`<style>
-            @media screen and (min-width: 768px) {
-                .left,
-                .right {${width}}
-            }
-        </style>`;
-    }
     _getIframe({height, src, type}) {
         if (!src.length) return;
         return html`<section class="${type}">
-            <iframe allowfullscreen frameborder="0" height="${height}" src="${src}"> </iframe>
+            <iframe allowfullscreen frameborder="0" height="${height}" src="${src}" loading="lazy"> </iframe>
         </section>`;
     }
 }

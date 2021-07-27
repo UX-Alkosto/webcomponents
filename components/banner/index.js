@@ -45,7 +45,7 @@ export class Banner extends LitElement {
     _getImage({height, src, type}) {
         if (!src.length) return;
         return html`<section class="${type}">
-            <img height="${height}" src="${src}" />
+            <img height="${height}" src="${src}" loading="lazy" />
         </section>`;
     }
 }
