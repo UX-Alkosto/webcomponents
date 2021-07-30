@@ -56,7 +56,8 @@ export default {
             comments: 'none'
         }),
         babel({
-            babelHelpers: 'bundled'
+            babelHelpers: 'bundled',
+            exclude: 'node_modules/**'
         }),
         summary()
     ],
