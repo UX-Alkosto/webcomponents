@@ -8,7 +8,8 @@
 		"lint": "eslint components/ --quiet",
 		"watch": "rollup -c -w",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook -o ./docs",
+		"deploy-storybook": "storybook-to-ghpages"
 	},
 	"dependencies": {
 		"@glidejs/glide": "^3.4.1",
@@ -31,6 +32,7 @@
 		"@storybook/addon-essentials": "^6.3.6",
 		"@storybook/addon-links": "^6.3.6",
 		"@storybook/addons": "^6.3.6",
+		"@storybook/storybook-deployer": "^2.8.10",
 		"@storybook/theming": "^6.3.6",
 		"@storybook/web-components": "^6.3.6",
 		"@types/node": "^16.0.0",
