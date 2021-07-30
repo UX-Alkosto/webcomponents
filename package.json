@@ -1,69 +1,76 @@
 {
-  "name": "webcomponents",
-  "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
-  "module": "dist/components.js",
-  "type": "module",
-  "scripts": {
-    "build": "eslint components/ --fix && rollup -c",
-    "lint": "eslint components/ --quiet",
-    "watch": "rollup -c -w"
-  },
-  "dependencies": {
-    "@glidejs/glide": "^3.4.1",
-    "lit": "*"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.14.8",
-    "@babel/eslint-parser": "^7.13.14",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.14.8",
-    "@babel/preset-modules": "^0.1.4",
-    "@rollup/plugin-alias": "^3.1.2",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^19.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@rollup/plugin-replace": "^3.0.0",
-    "@types/node": "^16.0.0",
-    "@webcomponents/webcomponentsjs": "^2.5.0",
-    "babel-jest": "^27.0.5",
-    "chai": "^4.3.4",
-    "corejs": "^1.0.0",
-    "deepmerge": "^4.2.2",
-    "eslint": "^7.25.0",
-    "jest": "^27.0.5",
-    "karma": "^6.3.2",
-    "karma-chai": "^0.1.0",
-    "karma-mocha": "^2.0.1",
-    "mocha": "^9.0.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "regenerator-runtime": "^0.13.9",
-    "rollup": "^2.45.2",
-    "rollup-plugin-cleaner": "^1.0.0",
-    "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-minify-html-literals": "^1.2.6",
-    "rollup-plugin-summary": "^1.3.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "systemjs": "^6.10.2",
-    "web-component-analyzer": "^1.1.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UX-Alkosto/webcomponents.git"
-  },
-  "keywords": [
-    "javascript",
-    "lit-element",
-    "web-components"
-  ],
-  "author": "Miguel Colmenares <me@miguelcolmenares.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/UX-Alkosto/webcomponents/issues"
-  },
-  "homepage": "https://github.com/UX-Alkosto/webcomponents#readme"
+	"name": "webcomponents",
+	"version": "1.1.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "eslint components/ --fix && rollup -c",
+		"lint": "eslint components/ --quiet",
+		"watch": "rollup -c -w",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"dependencies": {
+		"@glidejs/glide": "^3.4.1",
+		"lit": "2.0.0-rc.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.14.8",
+		"@babel/core": "^7.14.8",
+		"@babel/eslint-parser": "^7.13.14",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.14.8",
+		"@babel/preset-modules": "^0.1.4",
+		"@rollup/plugin-alias": "^3.1.2",
+		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-commonjs": "^19.0.2",
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^13.0.0",
+		"@rollup/plugin-replace": "^3.0.0",
+		"@storybook/addon-actions": "^6.3.6",
+		"@storybook/addon-essentials": "^6.3.6",
+		"@storybook/addon-links": "^6.3.6",
+		"@storybook/addons": "^6.3.6",
+		"@storybook/theming": "^6.3.6",
+		"@storybook/web-components": "^6.3.6",
+		"@types/node": "^16.0.0",
+		"@webcomponents/webcomponentsjs": "^2.5.0",
+		"babel-jest": "^27.0.5",
+		"babel-loader": "^8.2.2",
+		"chai": "^4.3.4",
+		"corejs": "^1.0.0",
+		"deepmerge": "^4.2.2",
+		"eslint": "^7.25.0",
+		"jest": "^27.0.5",
+		"karma": "^6.3.2",
+		"karma-chai": "^0.1.0",
+		"karma-mocha": "^2.0.1",
+		"mocha": "^9.0.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.2.1",
+		"regenerator-runtime": "^0.13.9",
+		"rollup": "^2.45.2",
+		"rollup-plugin-cleaner": "^1.0.0",
+		"rollup-plugin-cleanup": "^3.2.1",
+		"rollup-plugin-minify-html-literals": "^1.2.6",
+		"rollup-plugin-summary": "^1.3.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"systemjs": "^6.10.2",
+		"web-component-analyzer": "^1.1.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/UX-Alkosto/webcomponents.git"
+	},
+	"keywords": [
+		"javascript",
+		"lit-element",
+		"web-components"
+	],
+	"author": "Miguel Colmenares <me@miguelcolmenares.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/UX-Alkosto/webcomponents/issues"
+	},
+	"homepage": "https://github.com/UX-Alkosto/webcomponents#readme"
 }
