@@ -3,10 +3,10 @@ import { common } from '../../common';
 
 const styles = css`:host{
     background-color: var(--k-card-background-color, #fff);
-    border-radius: var(--k-card-border-radius, 4px);
+    border-radius: var(--button-radius,28px);
     display: inline-flex;
     flex-direction: column;
-    margin: .5em;
+    margin: 2em 0.5em 0.5em;
     max-width: 100%;
     padding: 0;
     position:relative;
@@ -24,18 +24,25 @@ const styles = css`:host{
     box-shadow: 0 2px 5px 2px rgba(0,0,0,.2);
 }
 ::slotted(k-button){
-    border: 4px solid white;
-    min-width: 180px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: var(--button-radius,28px);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
+    min-height: inherit;
+    min-width: 170px;
+    padding: 0.75em !important;
     position: absolute;
-    right: 2em;
-    top: 164px;
+    right: 1em;
+    top: 125px;   
     z-index: 1;
 }
 ::slotted(img){
-    border-radius: var(--button-radius,4px) var(--button-radius,4px) 0 0;
-    height: 191px;
-    object-fit:cover;
-    width:100%;
+    border-radius: var(--button-radius,28px) var(--button-radius,28px) 0 0;
+    height: 150px !important;
+    margin-bottom: 10px;
+    object-fit: cover;
+    width: 100%;   
 }
 .text{
     padding: .5em 1.75em 1.75em 1.75em;
@@ -43,16 +50,17 @@ const styles = css`:host{
 
 ::slotted(span){
     color: var(--primary-color1,#F9C332);
-    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
+    font-size: var(--font-base, 12px);
     font-weight: bold;
     line-height: 1.572em;
 }
 ::slotted(h2){
     color: var(--text-color1,#010000);
-    font-size: ${unsafeCSS(common.fontSize.h2)};
+    font-size: 20px !important;
     font-weight: bold;
     line-height: 1.3em;
-    max-width: 380px;
+    margin: 15px 0px !important;
+    max-width: 380px;   
 }
 
 ::slotted(p){
@@ -61,15 +69,16 @@ const styles = css`:host{
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
-    line-height: 1.572em;
+    font-size: var(--font-base, 13px);
+    line-height: 18px;
+    margin-bottom: 10px !important;
 }
 ::slotted(.author_date){
     color: var(--text-color3, #959595);
-    font-size: 0.857em;
+    font-size: 12px;
     font-weight: medium;
     line-height: 1.572em;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     text-align: right;
 }
 
