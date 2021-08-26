@@ -78,6 +78,11 @@ section,
     padding: 1rem;
     order: 2;
 }
+section picture {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
 .full{
     flex-basis: 100%;
 }
