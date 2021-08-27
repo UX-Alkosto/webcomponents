@@ -44,12 +44,6 @@ details[open] {
     line-height: 1.572em;
 }
 
-::slotted(li:before) {
-    content: "•";
-    color: var(--primary-color1, #DD171B) !important;
-    margin-right: 10px;
-    font-size: 60px;
-}
 
 ::slotted(a){
     color: var(--link-text-color, #444444) !important;
