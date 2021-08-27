@@ -6,6 +6,7 @@ export class Banner extends LitElement {
             loaded: { type: Boolean, reflect: true },
             height: { type: Number },
             src: { type: String },
+            'mobile-src': { type: String },
             type: { type: String },
             width: { type: Number }
         };
@@ -19,6 +20,7 @@ export class Banner extends LitElement {
         this.width = null;
         this.loaded = false;
         this.src = '';
+        this['mobile-src'] = '';
         this.type = 'left';
     }
     attributeChangedCallback(name, oldval, newval) {
@@ -27,10 +29,11 @@ export class Banner extends LitElement {
     }
     render() {
         this.loaded = true;
+        const image = this._getImage(this.type);
         return html`${this._dynamicStyles()}<div class="container">
-                ${this.type == 'left' || this.type == 'left-cut' || this.type == 'full' ? this._getImage({ height: this.height, src: this.src, type: this.type }) : ''}
+                ${this.type == 'left' || this.type == 'left-cut' || this.type == 'full' ? image : ''}
                 <slot class="content"></slot>
-                ${this.type == 'right' || this.type == 'right-cut' ? this._getImage({ height: this.height, src: this.src, type: this.type }) : ''}
+                ${this.type == 'right' || this.type == 'right-cut' ? image : ''}
             </div>`;
     }
     _dynamicStyles() {
@@ -42,10 +45,14 @@ export class Banner extends LitElement {
             }
         </style>`;
     }
-    _getImage({height, src, type}) {
-        if (!src.length) return;
+    _getImage(type) {
+        if (!this.src.length) return;
         return html`<section class="${type}">
-            <img height="${height}" src="${src}" loading="lazy" />
+        <picture>
+            ${(this['mobile-src'].length) ? html`<source media="(max-width: 768px)" srcset="${this['mobile-src']}">` : ''}
+            <source media="(min-width: 769px)" srcset="${this.src}">
+            <img height="${this.height}" src="${this.src}" loading="lazy" />
+        </picture>
         </section>`;
     }
 }

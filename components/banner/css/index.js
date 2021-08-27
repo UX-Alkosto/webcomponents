@@ -2,6 +2,7 @@ import { css, unsafeCSS } from 'lit';
 import { common } from '../../common';
 
 const styles = css`:host {
+    background-color: var(--k-banner-background-color, #FFF);
     color: var(--text-color1, #444444);
     display: flex;
     flex-wrap: wrap;
@@ -20,11 +21,11 @@ const styles = css`:host {
 }
 :host([type=left]),
 :host([type=right]) {
-    background-color: var(--k-brand-banner-background-color, #F5F5F5);
+    background-color: var(--k-banner-background-color, #F5F5F5);
 }
 :host([type=left-cut]) .container,
 :host([type=right-cut]) .container {
-    background-color: var(--k-brand-banner-background-color, #F5F5F5);
+    background-color: var(--k-banner-background-color, #F5F5F5);
 }
 :host([type=left]) .content,
 :host([type=right]) .content {
@@ -77,6 +78,11 @@ section,
     justify-content: center;
     padding: 1rem;
     order: 2;
+}
+section picture {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
 }
 .full{
     flex-basis: 100%;
