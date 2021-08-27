@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { styles } from './css';
-export class ItemLista extends LitElement {
+export class ItemList extends LitElement {
     constructor (){
         super();
     }

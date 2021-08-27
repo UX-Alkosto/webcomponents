@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { styles } from './css';
-export class Lista extends LitElement {
+export class List extends LitElement {
     constructor (){
         super();
         this.colum=1;
@@ -14,7 +14,7 @@ export class Lista extends LitElement {
         return styles;
     }
     render(){
-        return html`<ul class="split-list" style="--k-column-list:${this.column};">
+        return html`<ul style="--k-column-list:${this.column};">
         <slot></slot>
     </ul>`;  
     }
