@@ -8,6 +8,7 @@ import { Gallery } from './components/gallery';
 import { Grid } from './components/grid';
 import { Icon } from './components/icon';
 import { Link } from './components/link';
+import { Lista } from './components/lista';
 import { Slider } from './components/slider';
 import { TitleUnderline } from './components/title-underline';
 
@@ -21,5 +22,6 @@ window.customElements.define('k-gallery', Gallery);
 window.customElements.define('k-grid', Grid);
 window.customElements.define('k-icon', Icon);
 window.customElements.define('k-link', Link);
+window.customElements.define('k-lista', Lista);
 window.customElements.define('k-slider', Slider);
 window.customElements.define('k-title-underline', TitleUnderline);
