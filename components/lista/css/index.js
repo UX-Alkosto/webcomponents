@@ -1,6 +1,6 @@
-import{css} from'lit'
+import{css} from'lit';
 const styles= css`
-.split-list {
+ul {
     color: #444444;
     -webkit-column-count: 1;
     column-count: 1;
@@ -10,11 +10,11 @@ const styles= css`
     margin: 0;
     padding: 0;
 }
-.split-list li {
+::slotted (li) {
     list-style: none;
     padding: 0 10px;
 }
-.split-list li::before {
+::slotted(li:before) {
     content: "•";
     color: red;
     font-size: 18px;
@@ -22,12 +22,12 @@ const styles= css`
     margin-left: 10px;
 }
 @media only screen and (min-width: 768px) {
-    .split-list {
+    ul {
         -webkit-column-count: var(--k-column-list, 1);
         column-count: var(--k-column-list, 1);
     }
-    .split-list li::before {
+    ::slotted(li:before) {
         margin-left: -16px;
     }
-}`
-export {styles}
+}`;
+export {styles};
