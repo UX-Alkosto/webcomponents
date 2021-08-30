@@ -8,7 +8,7 @@ li {
 }
 li::before {
     content: "•";
-    color: var(--main-naranja, #444);
+    color: var(--primary-color1, #444);
     font-weight: bold;
     display: inline-block;
     width: 1em;
