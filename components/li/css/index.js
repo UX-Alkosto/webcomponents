@@ -4,18 +4,19 @@ li {
     color: var(--text-color1);
     line-height: 24px;
     list-style: none;
-    padding: 0 10px;
+    padding: 0 10px 10px 10px;
 }
 li::before {
     content: "•";
-    color: var(--primary-color1, #444444);
-    font-size: 18px;
-    margin-right: 10px;
-    margin-left: 10px;
+    color: var(--primary-color1, #444);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 @media only screen and (min-width: 768px) {
     li::before {
-        margin-left: -16px;
+        margin-left: -1em;
     }
 }`;
 export {styles};

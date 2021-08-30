@@ -10,7 +10,7 @@ ul {
     line-height: 24px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0px 20px;
 }
 @media only screen and (min-width: 768px) {
     ul {
