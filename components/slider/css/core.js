@@ -14,7 +14,7 @@ export const Core = css`
 .k-slider__slides {
     align-items: stretch;
     backface-visibility: hidden;
-    background-color: var(--k-slider-background-color, #fff);
+    background-color: transparent;
     display: flex;
     flex-wrap: nowrap;
     list-style: none;
