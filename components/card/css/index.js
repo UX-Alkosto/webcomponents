@@ -28,6 +28,21 @@ const styles = css`:host{
     padding: .5rem;
     text-align: center;
 }
+:host([type=category-product]) {
+    align-items: end;
+    display: flex;
+    padding: 0 10px;
+}
+:host([type=category-product]) ::slotted(img) {
+    order: 2;
+    margin-left: 25px;
+    width: 30%;
+}
+:host([type=category-product]) ::slotted(h3) {
+    font-weight: normal;
+    order: 1;
+    width: 70%;
+}
 :host([type=icon-item]){
     align-items: center;
     display:flex;
@@ -155,6 +170,9 @@ const styles = css`:host{
     ::slotted(p) {
         display: block;
     }
+    :host([type=category-product]) ::slotted(img) {
+    margin-left: 30px;
+}
 }`;
 
 export { styles };
