@@ -76,7 +76,7 @@ section,
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    padding: 0 1rem;
     order: 2;
 }
 section picture {
@@ -119,7 +119,7 @@ section picture {
     .content {
         align-items: flex-start;
         order: unset;
-        padding: 2rem;
+        padding: 0 2rem;
     }
     .left,
     .right{
