@@ -76,7 +76,7 @@ section,
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 1rem;
     order: 2;
 }
 section picture {
