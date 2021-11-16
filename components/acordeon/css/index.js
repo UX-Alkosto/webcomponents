@@ -6,6 +6,7 @@ const styles= css`
 h3 {
     color: var(--primary-color2, #004691) !important;
     font-size: 18px;
+    line-height: 22px;
     margin: 0;
 }
 
@@ -158,7 +159,7 @@ details .linea {
 
 @media only screen and (max-width: 414px) {
     h3 {
-        font-size: 14px;
+        font-size: 16px;
     }
     details {
         padding: 15px 15px 15px 15px;
@@ -181,7 +182,7 @@ details .linea {
     }
 
     :host([open]) .tit_pregunta {
-        margin-bottom: 10px !important;
+        margin-right: 22px;
     }
 }
 
