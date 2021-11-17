@@ -6,8 +6,7 @@ ul {
     -webkit-column-count: 1;
     column-count: 1;
     font-family: var(--font-family, 'Arial');
-    /* font-size: var(--font-base, ${unsafeCSS(common.fontSize.base)}); */
-    font-size: 14px;
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
     line-height: 1.572em;
     list-style: none;
     padding: 0;

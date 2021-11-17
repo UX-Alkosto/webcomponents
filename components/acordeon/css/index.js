@@ -13,7 +13,7 @@ h3 {
 details {
     width: 100%;
     min-height: 5px;
-    padding: 25px 25px;
+    padding: 25px;
     margin: 0 auto 20px auto;
     position: relative;
     font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
@@ -162,7 +162,6 @@ details .linea {
         font-size: 16px;
     }
     details {
-        padding: 25px 25px;
         width: 90%;
     }
 
