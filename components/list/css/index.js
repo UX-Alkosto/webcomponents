@@ -6,11 +6,10 @@ ul {
     -webkit-column-count: 1;
     column-count: 1;
     font-family: var(--font-family, 'Arial');
-    font-size: var(--font-base, ${unsafeCSS(common.fontSize.base)});
-    line-height: 24px;
+    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
+    line-height: 1.572em;
     list-style: none;
-    margin: 0;
-    padding: 0px 20px;
+    padding: 0;
 }
 @media only screen and (min-width: 768px) {
     ul {
