@@ -17,7 +17,7 @@ export default {
         banner: `/*! ${name} release: ${version} */`,
         dir: 'dist',
         chunkFileNames: '[name]-[hash].js',
-        format: 'esm'
+        format: 'es'
     }],
     onwarn(warning) {
         if (warning.code !== 'THIS_IS_UNDEFINED') {
@@ -61,5 +61,9 @@ export default {
         }),
         summary()
     ],
-    preserveEntrySignatures: 'strict'
+    preserveEntrySignatures: 'strict',
+    'treeshake': {
+        preset: 'smallest',
+        propertyReadSideEffects: true
+    }
 };
