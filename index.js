@@ -1,29 +1,65 @@
-import { Acordeon } from './components/acordeon';
-import { Banner } from './components/banner';
-import { BannerVideo } from './components/banner-video';
-import { BlogArticle } from './components/blog-article';
 import { Button } from './components/button';
-import { Card } from './components/card';
-import { Gallery } from './components/gallery';
-import { Grid } from './components/grid';
 import { Icon } from './components/icon';
 import { ItemList } from './components/li';
 import { Link } from './components/link';
-import { List } from './components/list';
-import { Slider } from './components/slider';
 import { TitleUnderline } from './components/title-underline';
 
-window.customElements.define('k-acordeon', Acordeon);
-window.customElements.define('k-banner', Banner);
-window.customElements.define('k-banner-video', BannerVideo);
-window.customElements.define('k-blog-article', BlogArticle);
+if (document.querySelectorAll('k-acordeon').length) {
+    import('./components/acordeon/index.js').then(component => {
+        window.customElements.define('k-acordeon', component['Acordeon']);
+    });
+}
+
+if (document.querySelectorAll('k-banner').length) {
+    import('./components/banner/index.js').then(component => {
+        window.customElements.define('k-banner', component['Banner']);
+    });
+}
+
+if (document.querySelectorAll('k-banner-video').length) {
+    import('./components/banner-video/index.js').then(component => {
+        window.customElements.define('k-banner-video', component['BannerVideo']);
+    });
+}
+
+if (document.querySelectorAll('k-blog-article').length) {
+    import('./components/blog-article/index.js').then(component => {
+        window.customElements.define('k-blog-article', component['BlogArticle']);
+    });
+}
+
+if (document.querySelectorAll('k-card').length) {
+    import('./components/card/index.js').then(component => {
+        window.customElements.define('k-card', component['Card']);
+    });
+}
+
+if (document.querySelectorAll('k-gallery').length) {
+    import('./components/gallery/index.js').then(component => {
+        window.customElements.define('k-gallery', component['Gallery']);
+    });
+}
+
+if (document.querySelectorAll('k-grid').length) {
+    import('./components/grid/index.js').then(component => {
+        window.customElements.define('k-grid', component['Grid']);
+    });
+}
+
+if (document.querySelectorAll('k-list').length) {
+    import('./components/list/index.js').then(component => {
+        window.customElements.define('k-list', component['List']);
+    });
+}
+
+if (document.querySelectorAll('k-slider').length) {
+    import('./components/slider/index.js').then(component => {
+        window.customElements.define('k-slider', component['Slider']);
+    });
+}
+
 window.customElements.define('k-button', Button);
-window.customElements.define('k-card', Card);
-window.customElements.define('k-gallery', Gallery);
-window.customElements.define('k-grid', Grid);
 window.customElements.define('k-icon', Icon);
 window.customElements.define('k-li', ItemList);
 window.customElements.define('k-link', Link);
-window.customElements.define('k-list', List);
-window.customElements.define('k-slider', Slider);
 window.customElements.define('k-title-underline', TitleUnderline);
