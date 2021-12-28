@@ -49,7 +49,7 @@ const styles = css`
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin-top: 4rem;
+		margin-top: 10px;
 	}
 
 	:host([type='icon-item']) ::slotted(h3) {
