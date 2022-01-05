@@ -7,6 +7,7 @@ import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import cleanup from 'rollup-plugin-cleanup';
 import summary from 'rollup-plugin-summary';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import { name, version } from './package.json';
 
 export default {
@@ -34,9 +35,11 @@ export default {
             'Reflect.decorate': 'undefined',
             preventAssignment: true
         }),
+        dynamicImportVars(),
         minifyHTML(),
+        resolve(),
         terser({
-            ecma: 2020,
+            ecma: 2017,
             module: true,
             warnings: true,
             mangle: {
@@ -45,7 +48,6 @@ export default {
                 },
             }
         }),
-        resolve(),
         alias({
             entries: [{
                 find: 'lit-html/lib/shady-render.js',
