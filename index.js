@@ -23,11 +23,11 @@ const components = [
     'title-underline',
 ];
 
-components.forEach(key => {
+components.forEach(async key => {
     const tagName = `k-${key}`;
     const componentClass = getComponentClass(key);
     if (document.querySelectorAll(tagName).length) {
-        import(`./components/${key}/index.js`).then(component => {
+        await import(`./components/${key}/index.js`).then(component => {
             window.customElements.define(tagName, component[componentClass]);
         });
     }
