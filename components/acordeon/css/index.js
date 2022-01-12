@@ -6,13 +6,14 @@ const styles= css`
 h3 {
     color: var(--primary-color2, #004691) !important;
     font-size: 18px;
+    line-height: 22px;
     margin: 0;
 }
 
 details {
     width: 100%;
     min-height: 5px;
-    padding: 25px 15px 25px 45px;
+    padding: 25px;
     margin: 0 auto 20px auto;
     position: relative;
     font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
@@ -44,12 +45,6 @@ details[open] {
     line-height: 1.572em;
 }
 
-::slotted(li:before) {
-    content: "•";
-    color: var(--primary-color1, #DD171B) !important;
-    margin-right: 10px;
-    font-size: 60px;
-}
 
 ::slotted(a){
     color: var(--link-text-color, #444444) !important;
@@ -164,10 +159,9 @@ details .linea {
 
 @media only screen and (max-width: 414px) {
     h3 {
-        font-size: 14px;
+        font-size: 16px;
     }
     details {
-        padding: 15px 15px 15px 15px;
         width: 90%;
     }
 
@@ -187,7 +181,7 @@ details .linea {
     }
 
     :host([open]) .tit_pregunta {
-        margin-bottom: 10px !important;
+        margin-right: 24px;
     }
 }
 

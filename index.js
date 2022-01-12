@@ -1,25 +1,39 @@
-import { Acordeon } from './components/acordeon';
-import { Banner } from './components/banner';
-import { BannerVideo } from './components/banner-video';
-import { BlogArticle } from './components/blog-article';
 import { Button } from './components/button';
-import { Card } from './components/card';
-import { Gallery } from './components/gallery';
-import { Grid } from './components/grid';
 import { Icon } from './components/icon';
+import { ItemList } from './components/li';
 import { Link } from './components/link';
-import { Slider } from './components/slider';
-import { TitleUnderline } from './components/title-underline';
 
-window.customElements.define('k-acordeon', Acordeon);
-window.customElements.define('k-banner', Banner);
-window.customElements.define('k-banner-video', BannerVideo);
-window.customElements.define('k-blog-article', BlogArticle);
+function getComponentClass (str) {
+    str = str.charAt(0).toUpperCase() + str.slice(1);
+    return str.replace(/-([a-z])/g, (g) => {
+        return g[1].toUpperCase();
+    });
+}
+
+const components = [
+    'acordeon',
+    'banner',
+    'banner-video',
+    'blog-article',
+    'card',
+    'gallery',
+    'grid',
+    'list',
+    'slider',
+    'title-underline',
+];
+
+components.forEach(async key => {
+    const tagName = `k-${key}`;
+    const componentClass = getComponentClass(key);
+    if (document.querySelectorAll(tagName).length) {
+        await import(`./components/${key}/index.js`).then(component => {
+            window.customElements.define(tagName, component[componentClass]);
+        });
+    }
+});
+
 window.customElements.define('k-button', Button);
-window.customElements.define('k-card', Card);
-window.customElements.define('k-gallery', Gallery);
-window.customElements.define('k-grid', Grid);
 window.customElements.define('k-icon', Icon);
+window.customElements.define('k-li', ItemList);
 window.customElements.define('k-link', Link);
-window.customElements.define('k-slider', Slider);
-window.customElements.define('k-title-underline', TitleUnderline);
