@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const Theme = css`
-.k-slider__arrow {
+.glide__arrow {
     align-items: center;
     background-color: white;
     border-radius: 48px;
@@ -21,26 +21,26 @@ export const Theme = css`
     width: 48px;
     z-index: 2;
 }
-.k-slider__arrow k-icon {
+.glide__arrow k-icon {
     font-size: 20px;
 }
-.k-slider__arrow:focus {
+.glide__arrow:focus {
     outline: none;
 }
-.k-slider__arrow:hover {
+.glide__arrow:hover {
     border-color: white;
 }
-.k-slider__arrow--left {
+.glide__arrow--left {
     left: 1em;
 }
-.k-slider__arrow--right {
+.glide__arrow--right {
     right: 1em;
 }
-.k-slider__arrow--disabled {
+.glide__arrow--disabled {
     opacity: 0.33;
 }
 
-.k-slider__bullets {
+.glide__bullets {
     position: absolute;
     z-index: 2;
     bottom: -2em;
@@ -50,7 +50,7 @@ export const Theme = css`
     transform: translateX(-50%);
 }
 
-.k-slider__bullet {
+.glide__bullet {
     background-color: var(--k-slider-bullet-color,#F5F5F5);
     width: 12px;
     height: 12px;
@@ -63,23 +63,23 @@ export const Theme = css`
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
     margin: 0 0.5em;
 }
-.k-slider__bullet:focus {
+.glide__bullet:focus {
     outline: none;
 }
-.k-slider__bullet:hover, .k-slider__bullet:focus {
+.glide__bullet:hover, .glide__bullet:focus {
     background-color: var(--k-slider-bullet-color-hover, #004691);
 }
-.k-slider__bullet--active {
+.glide__bullet--active {
     background-color: var(--carousel-nav-color, #004691);
 }
 
-.k-slider--swipeable {
+.glide--swipeable {
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
 }
 
-.k-slider--dragging {
+.glide--dragging {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
