@@ -1,6 +1,6 @@
 {
 	"name": "webcomponents",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Lit-element Webcomponents",
 	"main": "index.js",
 	"module": "dist/components.js",
@@ -11,7 +11,7 @@
 		"watch": "rollup -c -w"
 	},
 	"dependencies": {
-		"@glidejs/glide": "^3.4.1",
+		"@glidejs/glide": "^3.5.2",
 		"lit": "^2.0.2"
 	},
 	"devDependencies": {

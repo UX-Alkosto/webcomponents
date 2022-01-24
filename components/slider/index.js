@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import Glide from '@glidejs/glide';
 import { common } from '../common';
 import { styles, Core as coreStyles, Theme as themeStyles } from './css';
 
@@ -85,42 +86,27 @@ export class Slider extends LitElement {
         </style>`;
     }
     _getArrows() {
-        return html`<div class="k-slider__arrows" data-glide-el="controls">
-            <button class="k-slider__arrow k-slider__arrow--left" data-glide-dir="<"><k-icon icon="alk-icon-izquierda"></k-icon></button>
-            <button class="k-slider__arrow k-slider__arrow--right" data-glide-dir=">"><k-icon icon="alk-icon-derecha"></k-icon></button>
+        return html`<div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><k-icon icon="alk-icon-izquierda"></k-icon></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><k-icon icon="alk-icon-derecha"></k-icon></button>
         </div>`;
     }
     _getDots() {
         const bullets = [];
         for (let index = 0; index < this.countSlides; index++) {
-            bullets.push(html`<button class="k-slider__bullet" data-glide-dir="=${index}"></button>`);
+            bullets.push(html`<button class="glide__bullet" data-glide-dir="=${index}"></button>`);
         }
-        return html`<div class="k-slider__bullets" data-glide-el="controls[nav]">
+        return html`<div class="glide__bullets" data-glide-el="controls[nav]">
             ${bullets}
         </div>`;
     }
     async _initSlider() {
-        const Glide = await import('@glidejs/glide').then(Module => Module.default);
         let rawSlides = this.innerHTML;
         const slides = this.shadowRoot.querySelector('.k-slider__slides');
         slides.innerHTML = rawSlides;
         this.innerHTML = '';
         this.loaded = true;
         return new Glide(this.shadowRoot.querySelector('.k-slider'), {
-            classes: {
-                direction: {
-                    ltr: 'k-slider--ltr',
-                    rtl: 'k-slider--rtl'
-                },
-                slider: 'k-slider--slider',
-                carousel: 'k-slider--carousel',
-                swipeable: 'k-slider--swipeable',
-                dragging: 'k-slider--dragging',
-                cloneSlide: 'k-slider__slide--clone',
-                activeNav: 'k-slider__bullet--active',
-                activeSlide: 'k-slider__slide--active',
-                disabledArrow: 'k-slider__arrow--disabled'
-            },
             gap: this['items-space'],
             type: 'carousel',
             peek: this.peek,
