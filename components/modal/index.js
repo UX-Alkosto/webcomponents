@@ -1,36 +1,36 @@
 import { LitElement, html } from 'lit';
 import { styles } from './css';
-export class Acordeon extends LitElement {
-    constructor(){
-        super();
-        this.open=false;
-        this.title='Escriba un título';
-    }
+
+// TODO:
+// - add open and close methods
+
+export class Modal extends LitElement {
     static get properties() {
-        return {
-            open: {type:String,reflect:true},
-            title: {type:String}
-        };
+        return {};
     }
-    static get styles(){
+    static get styles() {
         return styles;
     }
+    constructor() {
+        super();
+        this.open = false;
+    }
     firstUpdated() {
-        this.open = isTrueSet(this.getAttribute('open'));
     }
-    render(){
-        return html`<details ?open="${this.open}">
-        <summary>
-            <h3 class="tit_pregunta">${this.title}</h3>
-            <k-icon class="expand" icon="alk-icon-abajo"></k-icon>
-            <k-icon class="collapse" icon="alk-icon-cerrar1"></k-icon>
-        </summary>
-        <hr class="linea">
-        <slot></slot>
-    </details>`;
+    get isOpen() {
+        return this.open;
     }
-}
-function isTrueSet(value = '') {
-    if(typeof value !== 'string') return false;
-    return value.toLowerCase() === 'true' && true;
+    render() {
+        return html`<div class="modal" aria-hidden="true">
+            <div class="modal-header">
+                <slot name="header"></slot>
+            </div>
+            <div class="modal-body">
+                <slot name="body"></slot>
+            </div>
+            <div class="modal-footer">
+                <slot name="footer"></slot>
+            </div>
+        </div>`;
+    }
 }

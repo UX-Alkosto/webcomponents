@@ -19,6 +19,7 @@ const components = [
     'gallery',
     'grid',
     'list',
+    'modal',
     'slider',
     'title-underline',
 ];

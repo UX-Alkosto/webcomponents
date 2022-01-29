@@ -17,7 +17,7 @@ export class Link extends LitElement {
     constructor() {
         super();
         this.href = '#';
-        this.icon = '';
+        this.icon = 'alk-icon-derecha';
         this.loaded = false;
         this.target = '_self';
         this.title = '';

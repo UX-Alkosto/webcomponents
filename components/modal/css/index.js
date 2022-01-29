@@ -1,193 +1,93 @@
-import{css, unsafeCSS} from'lit';
+import { css, unsafeCSS} from'lit';
 import { common } from '../../common';
 const styles= css`
-
-
-h3 {
+:host {
+    background-color: var(--k-modal-shadow-background-color, rgba(0, 0, 0, 0.7));
+    bottom: 0;
+    display: block;
+    left:0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: ease-in-out 0.3s all;
+    z-index: 9999;
+}
+::slotted(h1),
+::slotted(h2),
+::slotted(h3) {
     color: var(--primary-color2, #004691) !important;
-    font-size: 18px;
-    line-height: 22px;
-    margin: 0;
 }
-
-details {
+::slotted(h1) {
+    font-size: ${unsafeCSS(common.fontSize.h1)};
+}
+::slotted(h2) {
+    font-size: ${unsafeCSS(common.fontSize.h2)};
+}
+::slotted(h3) {
+    font-size: ${unsafeCSS(common.fontSize.h3)};
+}
+::slotted(h4) {
+    font-size: ${unsafeCSS(common.fontSize.h4)};
+}
+::slotted(h5) {
+    font-size: ${unsafeCSS(common.fontSize.h5)};
+}
+.modal {
+    background-color: var(--k-modal-background-color, #FFF);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    left: 50%;
+    max-width: 775px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    min-height: 5px;
-    padding: 25px;
-    margin: 0 auto 20px auto;
-    position: relative;
-    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 10px;
+}
+
+.modal-body {
     box-sizing: border-box;
-    transition: all .3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 24px;
 }
 
-
-details[open] {
-    min-height: 50px;
-    background-color: #ffffff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+.modal-body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0);
+    opacity: 0
 }
 
-::slotted(ul) {
-    color: var(--text-color1, #444444);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 24px;
-    margin-left: 20px;
-    padding: 0px;
+.modal-body::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(255,255,255,0);
+    opacity: 0
 }
 
-::slotted(p) {
-    color: var(--text-color1, #444444);
-    font-size: var(--font-base, ${unsafeCSS(common.fontSize.p)});
-    line-height: 1.572em;
+.modal-body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #444;
+    transition: .3s
 }
 
-
-::slotted(a){
-    color: var(--link-text-color, #444444) !important;
-    text-decoration: underline;
-}
-
-summary {
+.modal-header {
     align-items: center;
-    cursor: pointer;
-    display: flex !important;
-    position: relative; 
+    background-color: var(--k-modal-header-background-color, #FFF);
+    border-bottom: 2px solid var(--k-modal-header-border-color, #E63027);
+    box-sizing: border-box;
+    color: var(--k-modal-header-color, #444444);
+    display: flex;
+    font-size: ${unsafeCSS(common.fontSize.h2)};
+    height: 52px;
+    padding: 0 24px;
 }
-
-summary:focus {
-    outline: none !important;
-}
-
-summary::-webkit-details-marker {
-    display: none
-}
-
-.control-icon {
-    fill: var(--main-naranja);
-    transition: .3s ease;
-    pointer-events: none;
-    position: absolute;
-    top: 38px;
-    right: 10px;
-}
-
-.collapse {
-    display: none;
-}
-
-details[open] .collapse {
-    display: initial;
-    transition: .3s ease;
-}
-
-details[open] .expand {
-    display: none;
-}
-
-details[open] summary:hover::after {
-    animation: pulse 1s ease;
-}
-
-k-icon {
-    font-size: 20px;
-    line-height: 20px;
-    position: absolute;
-    right:0;
-    top:0;
-}
-
-details .linea {
-    background-color: #E0E0E0;
-    border: none;
-    height: 1px;
-}
-
-@keyframes pulse {
-    25% {
-        transform: scale(1.1);
+@media screen and (min-width: 768px) {
+    .modal {
+        height: 434px;
+        max-height: 90vh;
     }
-
-    50% {
-        transform: scale(1);
+    .modal-body {
+        height: 382px;
+        max-height: calc(90vh - 52px);
     }
-
-    75% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.fade-in-top {
-    -webkit-animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@-webkit-keyframes fade-in-top {
-    0% {
-        -webkit-transform: translateY(-50px);
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-top {
-    0% {
-        -webkit-transform: translateY(-50px);
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    h3 {
-        font-size: 16px;
-    }
-    details {
-        width: 90%;
-    }
-
-    details p,
-    details ul {
-        padding-right: 10px;
-    }
-
-    details p {
-        margin-top: 0px;
-
-    }
-
-    .control-icon {
-        top: 25px;
-        right: 5px;
-    }
-
-    :host([open]) .tit_pregunta {
-        margin-right: 24px;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-    details ul {
-        margin: 0px;
-    }
-}`; 
+}`;
 export {styles};
