@@ -1,13 +1,11 @@
 import { LitElement, html } from 'lit';
 import { styles } from './css';
 
-// TODO:
-// - add open and close methods
-
 export class Modal extends LitElement {
     static get properties() {
         return {
             name: { type: String, reflect: true },
+            open: { type: Boolean, reflect: true, attribute: 'open' },
         };
     }
     static get styles() {
@@ -23,9 +21,11 @@ export class Modal extends LitElement {
         return this.open;
     }
     render() {
-        return html`<div class="modal" aria-hidden="true" id="${this.name}">
+        return html`<div class="overlay" @click="${this._handleClose}"></div>
+        <div class="modal" aria-hidden="${!this.open}" id="${this.name}">
             <div class="modal-header">
-                <slot name="header"></slot>
+                <h4><slot name="header"></slot></h4>
+                <k-icon icon="alk-icon-close" name="close" @click="${this._handleClose}"></k-icon>
             </div>
             <div class="modal-body">
                 <slot name="body"></slot>
@@ -37,6 +37,10 @@ export class Modal extends LitElement {
     }
     _handleOpen() {
         this.open = true;
-        this.style.setProperty('display', 'block');
+        document.querySelector('body').style.setProperty('overflow', 'hidden');
+    }
+    _handleClose() {
+        this.open = false;
+        document.querySelector('body').style.removeProperty('overflow');
     }
 }
