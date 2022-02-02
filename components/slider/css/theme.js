@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const Theme = css`
-.glide__arrow {
+.k-slider__arrow {
     align-items: center;
     background-color: white;
     border-radius: 48px;
@@ -21,26 +21,26 @@ export const Theme = css`
     width: 48px;
     z-index: 2;
 }
-.glide__arrow k-icon {
+.k-slider__arrow k-icon {
     font-size: 20px;
 }
-.glide__arrow:focus {
+.k-slider__arrow:focus {
     outline: none;
 }
-.glide__arrow:hover {
+.k-slider__arrow:hover {
     border-color: white;
 }
-.glide__arrow--left {
+.k-slider__arrow--left {
     left: 1em;
 }
-.glide__arrow--right {
+.k-slider__arrow--right {
     right: 1em;
 }
-.glide__arrow--disabled {
+.k-slider__arrow--disabled {
     opacity: 0.33;
 }
 
-.glide__bullets {
+.k-slider__bullets {
     position: absolute;
     z-index: 2;
     bottom: -2em;
@@ -50,7 +50,7 @@ export const Theme = css`
     transform: translateX(-50%);
 }
 
-.glide__bullet {
+.k-slider__bullet {
     background-color: var(--k-slider-bullet-color,#F5F5F5);
     width: 12px;
     height: 12px;
@@ -63,13 +63,14 @@ export const Theme = css`
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
     margin: 0 0.5em;
 }
-.glide__bullet:focus {
+.k-slider__bullet:focus {
     outline: none;
 }
-.glide__bullet:hover, .glide__bullet:focus {
+.k-slider__bullet:hover, .k-slider__bullet:focus {
     background-color: var(--k-slider-bullet-color-hover, #004691);
 }
-.glide__bullet--active {
+.glide__bullet--active,
+.k-slider__bullet--active {
     background-color: var(--carousel-nav-color, #004691);
 }
 
