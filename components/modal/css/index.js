@@ -4,7 +4,7 @@ const styles= css`
 :host {
     background-color: var(--k-modal-shadow-background-color, rgba(0, 0, 0, 0.7));
     bottom: 0;
-    display: block;
+    display: none;
     left:0;
     position: fixed;
     right: 0;

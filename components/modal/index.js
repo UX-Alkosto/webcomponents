@@ -6,7 +6,9 @@ import { styles } from './css';
 
 export class Modal extends LitElement {
     static get properties() {
-        return {};
+        return {
+            name: { type: String, reflect: true },
+        };
     }
     static get styles() {
         return styles;
@@ -14,14 +16,14 @@ export class Modal extends LitElement {
     constructor() {
         super();
         this.open = false;
-    }
-    firstUpdated() {
+        this.name = '';
+        this.addEventListener('open', this._handleOpen);
     }
     get isOpen() {
         return this.open;
     }
     render() {
-        return html`<div class="modal" aria-hidden="true">
+        return html`<div class="modal" aria-hidden="true" id="${this.name}">
             <div class="modal-header">
                 <slot name="header"></slot>
             </div>
@@ -32,5 +34,9 @@ export class Modal extends LitElement {
                 <slot name="footer"></slot>
             </div>
         </div>`;
+    }
+    _handleOpen() {
+        this.open = true;
+        this.style.setProperty('display', 'block');
     }
 }

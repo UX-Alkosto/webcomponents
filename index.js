@@ -3,7 +3,7 @@ import { Icon } from './components/icon';
 import { ItemList } from './components/li';
 import { Link } from './components/link';
 
-function getComponentClass (str) {
+function getComponentClass(str) {
     str = str.charAt(0).toUpperCase() + str.slice(1);
     return str.replace(/-([a-z])/g, (g) => {
         return g[1].toUpperCase();
