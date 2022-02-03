@@ -33,14 +33,16 @@ export class Link extends LitElement {
         const icon = (this.hasAttribute('icon')) ?
             html`<k-icon icon="${this.icon}"></k-icon>` :
             '';
-        return html`<a href="${this.href}" @click="${this._handleClick}" target="${this.target}" title="${this.title}">
+        return html`<a href="${this.href}" @click="${this._handleModal}" target="${this.target}" title="${this.title}">
             <slot class="content"></slot>
             ${icon}
         </a>`;
     }
-    _handleClick(event) {
-        if (this.modal === '') return;
-        event.preventDefault();
-        return document.querySelector(`k-modal[name="${this.modal}"]`).dispatchEvent(new Event('open'));
+    _handleModal(event) {
+        if (this.modal !== '') {
+            event.preventDefault();
+            const modal = document.querySelector(`k-modal[name="${this.modal}"]`);
+            return modal && modal.dispatchEvent(new Event('open'));
+        }
     }
 }
