@@ -1,2 +1,2 @@
-/*! webcomponents release: 2.0.3 */
-import"./index-50489876.js";
+/*! webcomponents release: 2.0.4 */
+import"./index-c788f359.js";
