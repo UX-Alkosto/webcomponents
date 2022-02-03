@@ -4,6 +4,7 @@ const styles= css`
 :host {
     display: none;
 }
+:host([closed]),
 :host([open]) {
     display: block;
 }
@@ -27,7 +28,30 @@ const styles= css`
 ::slotted(h5) {
     font-size: ${unsafeCSS(common.fontSize.h5)};
 }
+:host([open]) .modal {
+    animation: .3s forwards slideUp;
+}
+:host([closed]) .modal {
+    animation: .3s forwards slideDown;
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 .overlay {
+    animation-play-state: paused;
     background-color: var(--k-modal-shadow-background-color, rgba(0, 0, 0, 0.7));
     bottom: 0;
     left:0;
@@ -38,6 +62,7 @@ const styles= css`
     z-index: 9999;
 }
 .modal {
+    animation-play-state: paused;
     background-color: var(--k-modal-background-color, #FFF);
     bottom: 0;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
@@ -109,6 +134,22 @@ const styles= css`
     .modal-body {
         height: 382px;
         max-height: calc(90vh - 52px);
+    }
+    @keyframes slideDown {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translate(-50%, 100%);
+        }
+    }
+    @keyframes slideUp {
+        0% {
+            transform: translate(-50%, 100%);
+        }
+        100% {
+            transform: translate(-50%, -50%);
+        }
     }
 }`;
 export {styles};

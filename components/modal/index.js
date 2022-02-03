@@ -6,6 +6,7 @@ export class Modal extends LitElement {
         return {
             name: { type: String, reflect: true },
             open: { type: Boolean, reflect: true, attribute: 'open' },
+            closed: { type: Boolean, reflect: true, attribute: 'closed' },
         };
     }
     static get styles() {
@@ -13,6 +14,7 @@ export class Modal extends LitElement {
     }
     constructor() {
         super();
+        this.closed = false;
         this.open = false;
         this.name = '';
         this.addEventListener('open', this._handleOpen);
@@ -40,7 +42,11 @@ export class Modal extends LitElement {
         document.querySelector('body').style.setProperty('overflow', 'hidden');
     }
     _handleClose() {
+        this.closed = true;
         this.open = false;
         document.querySelector('body').style.removeProperty('overflow');
+        setTimeout(() => {
+            this.removeAttribute('closed');
+        }, 300);
     }
 }
