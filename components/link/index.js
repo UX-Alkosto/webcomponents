@@ -41,8 +41,8 @@ export class Link extends LitElement {
     _handleModal(event) {
         if (this.modal !== '') {
             event.preventDefault();
-            const modal = document.querySelector(`k-modal[name="${this.modal}"]`);
-            return modal && modal.dispatchEvent(new Event('open'));
+            const modal = document.querySelectorAll(`k-modal[name="${this.modal}"]`);
+            return modal.length && modal[modal.length - 1].dispatchEvent(new Event('open'));
         }
     }
 }
