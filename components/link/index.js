@@ -23,6 +23,7 @@ export class Link extends LitElement {
         this.modal = '';
         this.target = '_self';
         this.title = '';
+        this.breakPoint = 768;
     }
     attributeChangedCallback(name, oldval, newval) {
         super.attributeChangedCallback(name, oldval, newval);
@@ -41,8 +42,13 @@ export class Link extends LitElement {
     _handleModal(event) {
         if (this.modal !== '') {
             event.preventDefault();
-            const modal = document.querySelector(`k-modal[name="${this.modal}"]`);
-            return modal && modal.dispatchEvent(new Event('open'));
+            const modal = document.querySelectorAll(`k-modal[name="${this.modal}"]`);
+            if (modal.length) {
+                if (window.innerWidth < this.breakPoint) {
+                    return modal[modal.length - 1].dispatchEvent(new Event('open'));
+                }
+                return modal[0].dispatchEvent(new Event('open'));
+            }
         }
     }
 }
