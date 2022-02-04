@@ -82,6 +82,25 @@ const styles= css`
     padding: 24px;
 }
 
+:host([type='video']) .modal-body {
+    padding: 0;
+}
+:host([type='video']) .modal,
+:host([type='video']) .modal-header {
+    --k-icon-color: #fff;
+    background-color: transparent;
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+:host([type='video']) .modal-header h4 {
+    color: var(--k-modal-video-header-text-color, #FFF);
+}
+
+:host([type='video']) ::slotted(iframe) {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
 .modal-body::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: rgba(255,255,255,0);
