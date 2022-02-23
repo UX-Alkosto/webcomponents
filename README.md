@@ -1,6 +1,4 @@
-![alt text](https://data.jsdelivr.com/v1/package/gh/ux-alkosto/webcomponents/badge "JsDelivr")
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/UX-Alkosto/webcomponents)
-[![Only 33 Kb](https://badge-size.herokuapp.com/UX-Alkosto/webcomponents/master/dist/components.js)](https://cdn.jsdelivr.net/gh/ux-alkosto/webcomponents/dist/components.js)
+# Webcomponents  [![GitHub Actions Status Badge](https://github.com/UX-Alkosto/webcomponents/workflows/CodeQL/badge.svg)](https://github.com/UX-Alkosto/webcomponents/actions/workflows/master-codeql-analysis.yml) [![GitHub Actions Status Badge](https://github.com/UX-Alkosto/webcomponents/actions/workflows/build-master.yml/badge.svg)](https://github.com/UX-Alkosto/webcomponents/actions/workflows/build-master.yml) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/UX-Alkosto/webcomponents) [![](https://data.jsdelivr.com/v1/package/gh/ux-alkosto/webcomponents/badge?style=rounded)](https://www.jsdelivr.com/package/gh/ux-alkosto/webcomponents)
 
 
 # Use on the web
