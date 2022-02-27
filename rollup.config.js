@@ -1,5 +1,6 @@
 import { babel } from '@rollup/plugin-babel';
 import alias from '@rollup/plugin-alias';
+import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import cleaner from 'rollup-plugin-cleaner';
@@ -17,7 +18,7 @@ export default {
     output: [{
         banner: `/*! ${name} release: ${version} */`,
         dir: 'dist',
-        chunkFileNames: '[name]-[hash].js',
+        chunkFileNames: `${name}-${version}-[hash].js`,
         format: 'es'
     }],
     onwarn(warning) {
@@ -36,8 +37,8 @@ export default {
             preventAssignment: true
         }),
         dynamicImportVars(),
-        minifyHTML(),
         resolve(),
+        minifyHTML(),
         terser({
             ecma: 2017,
             module: true,
@@ -57,6 +58,7 @@ export default {
         cleanup({
             comments: 'none'
         }),
+        commonjs(),
         babel({
             babelHelpers: 'bundled',
             exclude: 'node_modules/**'
