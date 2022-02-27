@@ -21,11 +21,11 @@ export class Acordeon extends LitElement {
     render(){
         return html`<details ?open="${this.open}">
         <summary>
-            <h3 class="tit_pregunta">${this.title}</h3>
+            <h3>${this.title}</h3>
             <k-icon class="expand" icon="alk-icon-abajo"></k-icon>
             <k-icon class="collapse" icon="alk-icon-cerrar1"></k-icon>
         </summary>
-        <hr class="linea">
+        <hr>
         <slot></slot>
     </details>`;
     }
