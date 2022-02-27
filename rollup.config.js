@@ -76,7 +76,7 @@ export default {
 		summary()
 	],
 	preserveEntrySignatures: 'strict',
-	'treeshake': {
+	treeshake: {
 		preset: 'smallest',
 		propertyReadSideEffects: true
 	}
