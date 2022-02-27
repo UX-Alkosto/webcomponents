@@ -19,27 +19,27 @@ window.customElements.define('k-slider', Slider);
 window.customElements.define('k-title-underline', TitleUnderline);
 
 function getComponentClass(str) {
-    str = str.charAt(0).toUpperCase() + str.slice(1);
-    return str.replace(/-([a-z])/g, (g) => {
-        return g[1].toUpperCase();
-    });
+	str = str.charAt(0).toUpperCase() + str.slice(1);
+	return str.replace(/-([a-z])/g, (g) => {
+		return g[1].toUpperCase();
+	});
 }
 
 const components = [
-    'acordeon',
-    'banner-video',
-    'blog-article',
-    'gallery',
-    'list',
-    'modal',
+	'acordeon',
+	'banner-video',
+	'blog-article',
+	'gallery',
+	'list',
+	'modal',
 ];
 
 components.forEach(key => {
-    const tagName = `k-${key}`;
-    const componentClass = getComponentClass(key);
-    if (document.querySelectorAll(tagName).length) {
-        import(`./components/${key}/index.js`).then(component => {
-            window.customElements.define(tagName, component[componentClass]);
-        });
-    }
+	const tagName = `k-${key}`;
+	const componentClass = getComponentClass(key);
+	if (document.querySelectorAll(tagName).length) {
+		import(`./components/${key}/index.js`).then(component => {
+			window.customElements.define(tagName, component[componentClass]);
+		});
+	}
 });
