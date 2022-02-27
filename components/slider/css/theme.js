@@ -69,17 +69,18 @@ export const Theme = css`
 .k-slider__bullet:hover, .k-slider__bullet:focus {
     background-color: var(--k-slider-bullet-color-hover, #004691);
 }
+.glide__bullet--active,
 .k-slider__bullet--active {
     background-color: var(--carousel-nav-color, #004691);
 }
 
-.k-slider--swipeable {
+.glide--swipeable {
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
 }
 
-.k-slider--dragging {
+.glide--dragging {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;

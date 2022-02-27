@@ -7,6 +7,7 @@ export class Link extends LitElement {
             href: { type: String },
             icon: { type: String, reflect: true },
             loaded: { type: Boolean, reflect: true },
+            modal: { type: String, reflect: true },
             title: { type: String },
             target: { type: String }
         };
@@ -17,10 +18,12 @@ export class Link extends LitElement {
     constructor() {
         super();
         this.href = '#';
-        this.icon = '';
+        this.icon = 'alk-icon-derecha';
         this.loaded = false;
+        this.modal = '';
         this.target = '_self';
         this.title = '';
+        this.breakPoint = 768;
     }
     attributeChangedCallback(name, oldval, newval) {
         super.attributeChangedCallback(name, oldval, newval);
@@ -31,9 +34,21 @@ export class Link extends LitElement {
         const icon = (this.hasAttribute('icon')) ?
             html`<k-icon icon="${this.icon}"></k-icon>` :
             '';
-        return html`<a href="${this.href}" target="${this.target}" title="${this.title}">
+        return html`<a href="${this.href}" @click="${this._handleModal}" target="${this.target}" title="${this.title}">
             <slot class="content"></slot>
             ${icon}
         </a>`;
+    }
+    _handleModal(event) {
+        if (this.modal !== '') {
+            event.preventDefault();
+            const modal = document.querySelectorAll(`k-modal[name="${this.modal}"]`);
+            if (modal.length) {
+                if (window.innerWidth < this.breakPoint) {
+                    return modal[modal.length - 1].dispatchEvent(new Event('open'));
+                }
+                return modal[0].dispatchEvent(new Event('open'));
+            }
+        }
     }
 }
