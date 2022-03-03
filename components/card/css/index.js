@@ -5,7 +5,7 @@ const styles = css`
 		background-color: var(--k-card-background-color, #fff);
 		border-radius: var(--k-card-border-radius, 4px);
 		display: inline-block;
-		margin: 0.5em;
+		margin: 0 0.25em;
 		max-width: 100%;
 		padding: 1rem;
 		transition: ease-in-out 0.3s all;

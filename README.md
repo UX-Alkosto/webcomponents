@@ -6,9 +6,9 @@
 To use this web components, copy the code into your html:
 
 ```html
-  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/ux-alkosto/webcomponents/dist/components.js">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <script type="module" src="https://cdn.jsdelivr.net/gh/ux-alkosto/webcomponents/dist/components.js"></script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/ux-alkosto/webcomponents/dist/components.js">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<script type="module" src="https://cdn.jsdelivr.net/gh/ux-alkosto/webcomponents/dist/components.js"></script>
 ```
 
 [See the demo page](https://ux-alkosto.github.io/webcomponents/)
