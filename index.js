@@ -1,18 +1,10 @@
-import { Button } from './components/button';
-import { Card } from './components/card';
-import { Grid } from './components/grid';
 import { Icon } from './components/icon';
 import { ItemList } from './components/li';
-import { Link } from './components/link';
-import { Slider } from './components/slider';
+import { Modal } from './components/modal';
 
-window.customElements.define('k-button', Button);
-window.customElements.define('k-card', Card);
-window.customElements.define('k-grid', Grid);
 window.customElements.define('k-icon', Icon);
 window.customElements.define('k-li', ItemList);
-window.customElements.define('k-link', Link);
-window.customElements.define('k-slider', Slider);
+window.customElements.define('k-modal', Modal);
 
 function getComponentClass(str) {
 	str = str.charAt(0).toUpperCase() + str.slice(1);
@@ -21,23 +13,40 @@ function getComponentClass(str) {
 	});
 }
 
-const components = [
+const lazyComponents = [
 	'acordeon',
 	'banner',
 	'banner-video',
 	'blog-article',
+	'button',
+	'card',
 	'gallery',
+	'grid',
+	'link',
 	'list',
-	'modal',
+	'slider',
 	'title-underline'
 ];
+const imported = {};
+const observer = new IntersectionObserver((entries, observerRef) => {
+	entries.forEach(async entry => {
+		if (entry.isIntersecting) {
+			const tagName = entry.target.tagName.toLowerCase();
+			const componetKey = tagName.replace('k-', '');
+			const componentClass = getComponentClass(componetKey);
+			observerRef.unobserve(entry.target);
+			if (!imported[tagName]) {
+				imported[tagName] = true;
+				await import(`./components/${componetKey}/index.js`).then(component => {
+					window.customElements.define(tagName, component[componentClass]);
+				});
+			}
+		}
+	});
+}, { rootMargin: '0px 0px 250px 0px' });
 
-components.forEach(key => {
-	const tagName = `k-${key}`;
-	const componentClass = getComponentClass(key);
-	if (document.querySelectorAll(tagName).length) {
-		import(`./components/${key}/index.js`).then(component => {
-			window.customElements.define(tagName, component[componentClass]);
-		});
-	}
+lazyComponents.forEach(component => {
+	const tagName = `k-${component}`;
+	const tags = document.querySelectorAll(tagName);
+	tags.length && tags.forEach(tag => observer.observe(tag));
 });
