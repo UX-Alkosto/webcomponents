@@ -31,10 +31,10 @@ export const Theme = css`
     border-color: white;
 }
 .k-slider__arrow--left {
-    left: 1em;
+    left: .4em;
 }
 .k-slider__arrow--right {
-    right: 1em;
+    right: .4em;
 }
 .k-slider__arrow--disabled {
     opacity: 0.33;
@@ -43,7 +43,7 @@ export const Theme = css`
 .k-slider__bullets {
     position: absolute;
     z-index: 2;
-    bottom: -2em;
+    bottom: -1.5em;
     left: 50%;
     display: inline-flex;
     list-style: none;
