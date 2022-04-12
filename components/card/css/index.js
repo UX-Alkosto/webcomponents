@@ -16,6 +16,7 @@ const styles = css`
 	}
 	:host([shadow]) {
 		box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.1);
+		will-change: box-shadow;
 	}
 	:host([shadow]:hover),
 	:host([shadow]:focus) {
@@ -103,9 +104,9 @@ const styles = css`
 	:host([type='product-item']) ::slotted(k-img) {
 		margin-top: -3rem;
 		max-width: 100%;
+		transition: 0.3s ease-in-out transform;
 		width: auto;
 		will-change: transform;
-		transition: 0.3s ease-in-out transform;
 	}
 	:host([type='product-item']:hover) ::slotted(img),
 	:host([type='product-item']:hover) ::slotted(k-img) {

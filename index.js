@@ -1,7 +1,9 @@
+import { Card } from './components/card';
 import { Icon } from './components/icon';
 import { ItemList } from './components/li';
 import { Modal } from './components/modal';
 
+window.customElements.define('k-card', Card);
 window.customElements.define('k-icon', Icon);
 window.customElements.define('k-li', ItemList);
 window.customElements.define('k-modal', Modal);
@@ -19,7 +21,6 @@ const lazyComponents = [
 	'banner-video',
 	'blog-article',
 	'button',
-	'card',
 	'gallery',
 	'grid',
 	'link',

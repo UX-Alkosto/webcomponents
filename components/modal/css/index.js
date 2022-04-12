@@ -58,12 +58,12 @@ const styles= css`
     position: fixed;
     right: 0;
     top: 0;
-    transition: ease-in-out 0.3s all;
     z-index: 9999;
 }
 .modal {
     animation-play-state: paused;
     background-color: var(--k-modal-background-color, #FFF);
+    border: 0;
     bottom: 0;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     left: 0;
@@ -72,6 +72,7 @@ const styles= css`
     overflow: hidden;
     position: fixed;
     width: 100%;
+    will-change: transform;
     z-index: 10000;
 }
 
