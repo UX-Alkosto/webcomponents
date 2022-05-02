@@ -7,7 +7,6 @@ import cleaner from 'rollup-plugin-cleaner';
 import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import cleanup from 'rollup-plugin-cleanup';
-import summary from 'rollup-plugin-summary';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import { name, version } from './package.json';
 
@@ -73,7 +72,6 @@ export default {
 				],
 			]
 		}),
-		summary()
 	],
 	preserveEntrySignatures: 'strict',
 	treeshake: {
