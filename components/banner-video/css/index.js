@@ -1,6 +1,16 @@
 import { css } from 'lit';
 
 const styles = css`
+.full .lazy-iframe,
+.left .lazy-iframe,
+.left-cut .lazy-iframe,
+.right .lazy-iframe,
+.right-cut .lazy-iframe {
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
 .full iframe,
 .left iframe,
 .left-cut iframe,
