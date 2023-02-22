@@ -36,8 +36,12 @@ const styles = css`
 		padding: 0 10px;
 	}
 	:host([type='category-product']) ::slotted(img) {
+		transition: transform 0.3s ease-in-out;
 		order: 2;
 		width: 20%;
+	}
+	:host([type='category-product']:hover) ::slotted(img) {
+		transform: scale3d(1.2, 1.2, 1);
 	}
 	:host([type='category-product']) ::slotted(h3) {
 		font-size: 16px;
@@ -110,7 +114,7 @@ const styles = css`
 	}
 	:host([type='product-item']:hover) ::slotted(img),
 	:host([type='product-item']:hover) ::slotted(k-img) {
-		transform: scale3d(1.05, 1.05, 1);
+		transform: scale3d(1.1, 1.1, 1);
 	}
 	:host([type='product-item']) ::slotted(p) {
 		text-align: initial;
