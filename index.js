@@ -34,13 +34,14 @@ const bodyObserver = new MutationObserver(mutations => {
 		if (type === 'childList') {
 			addedNodes.forEach(async ({ nodeType, tagName: tag }) => {
 				if (nodeType === 1) {
+					if(!tag.includes('k-')) return;
 					const tagName = tag.toLowerCase();
 					const componetKey = tagName.replace('k-', '');
 					const componentClass = getComponentClass(componetKey);
 					if (lazyComponents.includes(componetKey)) {
 						if (!imported[tagName]) {
 							imported[tagName] = true;
-							await import(`./components/${componetKey}/index.js`).then(component => {
+							import(`./components/${componetKey}/index.js`).then(component => {
 								window.customElements.define(tagName, component[componentClass]);
 							});
 						}
@@ -51,7 +52,7 @@ const bodyObserver = new MutationObserver(mutations => {
 	});
 });
 const elementsObserver = new IntersectionObserver((entries, observerRef) => {
-	entries.forEach(async ({ isIntersecting, target }) => {
+	entries.forEach(({ isIntersecting, target }) => {
 		if (isIntersecting) {
 			const tagName = target.tagName.toLowerCase();
 			const componetKey = tagName.replace('k-', '');
@@ -59,7 +60,7 @@ const elementsObserver = new IntersectionObserver((entries, observerRef) => {
 			observerRef.unobserve(target);
 			if (!imported[tagName]) {
 				imported[tagName] = true;
-				await import(`./components/${componetKey}/index.js`).then(component => {
+				import(`./components/${componetKey}/index.js`).then(component => {
 					window.customElements.define(tagName, component[componentClass]);
 				});
 			}
