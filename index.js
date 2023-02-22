@@ -29,13 +29,34 @@ const lazyComponents = [
 	'title-underline'
 ];
 const imported = {};
-const observer = new IntersectionObserver((entries, observerRef) => {
-	entries.forEach(async entry => {
-		if (entry.isIntersecting) {
-			const tagName = entry.target.tagName.toLowerCase();
+const bodyObserver = new MutationObserver(mutations => {
+	mutations.forEach(({ addedNodes, type }) => {
+		if (type === 'childList') {
+			addedNodes.forEach(async ({ nodeType, tagName: tag }) => {
+				if (nodeType === 1) {
+					const tagName = tag.toLowerCase();
+					const componetKey = tagName.replace('k-', '');
+					const componentClass = getComponentClass(componetKey);
+					if (lazyComponents.includes(componetKey)) {
+						if (!imported[tagName]) {
+							imported[tagName] = true;
+							await import(`./components/${componetKey}/index.js`).then(component => {
+								window.customElements.define(tagName, component[componentClass]);
+							});
+						}
+					}
+				}
+			});
+		}
+	});
+});
+const elementsObserver = new IntersectionObserver((entries, observerRef) => {
+	entries.forEach(async ({ isIntersecting, target }) => {
+		if (isIntersecting) {
+			const tagName = target.tagName.toLowerCase();
 			const componetKey = tagName.replace('k-', '');
 			const componentClass = getComponentClass(componetKey);
-			observerRef.unobserve(entry.target);
+			observerRef.unobserve(target);
 			if (!imported[tagName]) {
 				imported[tagName] = true;
 				await import(`./components/${componetKey}/index.js`).then(component => {
@@ -48,6 +69,11 @@ const observer = new IntersectionObserver((entries, observerRef) => {
 
 lazyComponents.forEach(component => {
 	const tagName = `k-${component}`;
-	const tags = document.querySelectorAll(tagName);
-	tags.length && tags.forEach(tag => observer.observe(tag));
+	const tags = Array.from(document.querySelectorAll(tagName));
+	tags.length && tags.forEach(tag => elementsObserver.observe(tag));
+});
+
+bodyObserver.observe(document.body, {
+	childList: true,
+	subtree: true
 });
