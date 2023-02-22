@@ -31,8 +31,10 @@ const lazyComponents = [
 const imported = {};
 const bodyObserver = new MutationObserver(mutations => {
 	mutations.forEach(({ addedNodes, type }) => {
+		console.log({addedNodes, type});
 		if (type === 'childList') {
 			addedNodes.forEach(async ({ nodeType, tagName: tag }) => {
+				console.log({nodeType, tag});
 				if (nodeType === 1) {
 					if(!tag.includes('k-')) return;
 					const tagName = tag.toLowerCase();
