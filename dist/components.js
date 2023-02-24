@@ -1,2 +1,2 @@
-/*! webcomponents release: 2.1.1 */
-import"./webcomponents-2.1.1-659eee83.js";
+/*! webcomponents release: 2.1.2 */
+import"./webcomponents-2.1.2-70e724bf.js";
