@@ -1,6 +1,6 @@
 {
 	"name": "webcomponents",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Lit-element Webcomponents",
 	"main": "index.js",
 	"module": "dist/components.js",
