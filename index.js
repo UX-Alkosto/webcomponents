@@ -15,6 +15,29 @@ function getComponentClass(str) {
 	});
 }
 
+function hasChildren({children, nodeType, outerHTML, tagName}) {
+	if(!children || !children.length || nodeType !== 1 || !outerHTML) return;
+	const hasTag = outerHTML.includes('k-');
+	if(!hasTag) return;
+	importContent(tagName);
+	Array.from(children).forEach(child => hasChildren(child));
+}
+
+function importContent(tag) {
+	if(!tag.includes('k-')) return;
+	const tagName = tag.toLowerCase();
+	const componetKey = tagName.replace('k-', '');
+	const componentClass = getComponentClass(componetKey);
+	if (lazyComponents.includes(componetKey)) {
+		if (!imported[tagName]) {
+			imported[tagName] = true;
+			import(`./components/${componetKey}/index.js`).then(component => {
+				window.customElements.define(tagName, component[componentClass]);
+			});
+		}
+	}
+}
+
 const lazyComponents = [
 	'acordeon',
 	'banner',
@@ -31,25 +54,8 @@ const lazyComponents = [
 const imported = {};
 const bodyObserver = new MutationObserver(mutations => {
 	mutations.forEach(({ addedNodes, type }) => {
-		console.log({addedNodes, type});
 		if (type === 'childList') {
-			addedNodes.forEach(async ({ nodeType, tagName: tag }) => {
-				console.log({nodeType, tag});
-				if (nodeType === 1) {
-					if(!tag.includes('k-')) return;
-					const tagName = tag.toLowerCase();
-					const componetKey = tagName.replace('k-', '');
-					const componentClass = getComponentClass(componetKey);
-					if (lazyComponents.includes(componetKey)) {
-						if (!imported[tagName]) {
-							imported[tagName] = true;
-							import(`./components/${componetKey}/index.js`).then(component => {
-								window.customElements.define(tagName, component[componentClass]);
-							});
-						}
-					}
-				}
-			});
+			addedNodes.forEach(node => hasChildren(node));
 		}
 	});
 });
