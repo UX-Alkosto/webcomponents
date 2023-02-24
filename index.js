@@ -15,16 +15,15 @@ function getComponentClass(str) {
 	});
 }
 
-function hasChildren({children, nodeType, outerHTML, tagName}) {
-	if(!children || !children.length || nodeType !== 1 || !outerHTML) return;
+function hasChildren({ children, nodeType, outerHTML, tagName }) {
+	if (!children || !children.length || nodeType !== 1 || !outerHTML) return;
 	const hasTag = outerHTML.includes('k-');
-	if(!hasTag) return;
-	importContent(tagName);
+	if (!hasTag) return;
+	tagName.includes('k-') && importContent(tagName);
 	Array.from(children).forEach(child => hasChildren(child));
 }
 
 function importContent(tag) {
-	if(!tag.includes('k-')) return;
 	const tagName = tag.toLowerCase();
 	const componetKey = tagName.replace('k-', '');
 	const componentClass = getComponentClass(componetKey);
@@ -51,7 +50,12 @@ const lazyComponents = [
 	'slider',
 	'title-underline'
 ];
-const imported = {};
+const imported = {
+	'k-card': true,
+	'k-icon': true,
+	'k-li': true,
+	'k-modal': true
+};
 const bodyObserver = new MutationObserver(mutations => {
 	mutations.forEach(({ addedNodes, type }) => {
 		if (type === 'childList') {
