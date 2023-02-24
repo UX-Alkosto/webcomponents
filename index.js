@@ -18,7 +18,7 @@ function getComponentClass(str) {
 function hasChildren({ children, nodeType, outerHTML, tagName }) {
 	if (!children || !children.length || nodeType !== 1 || !outerHTML) return;
 	const hasTag = outerHTML.includes('k-');
-	tagName.includes('k-') && importComponent(tagName);
+	tagName.toLowerCase().includes('k-') && importComponent(tagName);
 	if (!hasTag) return;
 	Array.from(children).forEach(child => hasChildren(child));
 }
