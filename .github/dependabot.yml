@@ -3,8 +3,6 @@ updates:
   - package-ecosystem: "npm"
     versioning-strategy: widen
     target-branch: "develop"
-    reviewers:
-      - "miguelcolmenares"
     directory: "/"
     schedule:
       interval: "weekly"
