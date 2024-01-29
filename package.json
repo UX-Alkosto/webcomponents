@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@glidejs/glide": "^3.5.2",
-		"lit": "^2.0.2"
+		"lit": "^2.7.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
@@ -54,7 +54,7 @@
 	"author": "Miguel Colmenares <me@miguelcolmenares.com>",
 	"license": "MIT",
 	"engines": {
-		"node": ">=16"
+		"node": ">=20"
 	},
 	"bugs": {
 		"url": "https://github.com/UX-Alkosto/webcomponents/issues"
