@@ -1,6 +1,6 @@
 {
 	"name": "webcomponents",
-	"version": "2.1.2",
+	"version": "2.2.0",
 	"description": "Lit-element Webcomponents",
 	"main": "index.js",
 	"module": "dist/components.js",
@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@glidejs/glide": "^3.5.2",
-		"lit": "^2.0.2"
+		"lit": "^2.8.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
@@ -21,19 +21,19 @@
 		"@babel/polyfill": "^7.12.1",
 		"@babel/preset-env": "^7.14.8",
 		"@babel/preset-modules": "^0.1.4",
-		"@rollup/plugin-alias": "^4.0.0",
+		"@rollup/plugin-alias": "^5.0.0",
 		"@rollup/plugin-babel": "^6.0.0",
-		"@rollup/plugin-commonjs": "^24.0.0",
+		"@rollup/plugin-commonjs": "^25.0.0",
 		"@rollup/plugin-dynamic-import-vars": "^2.0.0",
 		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.0",
 		"@rollup/plugin-replace": "^5.0.0",
 		"eslint": "^8.0.0",
-		"eslint-config-prettier": "^8.4.0",
+		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-import": "^2.25.4",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.5.1",
-		"regenerator-runtime": "^0.13.9",
+		"prettier": "^3.1.0",
+		"regenerator-runtime": "^0.14.0",
 		"rollup": "^2.45.2",
 		"rollup-plugin-cleaner": "^1.0.0",
 		"rollup-plugin-cleanup": "^3.2.1",
@@ -54,7 +54,7 @@
 	"author": "Miguel Colmenares <me@miguelcolmenares.com>",
 	"license": "MIT",
 	"engines": {
-		"node": ">=16"
+		"node": ">=20"
 	},
 	"bugs": {
 		"url": "https://github.com/UX-Alkosto/webcomponents/issues"
