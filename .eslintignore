@@ -1,4 +1,0 @@
-**/node_modules/**
-dist/*
-karma.config*
-rollup.config*
