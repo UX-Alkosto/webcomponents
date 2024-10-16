@@ -1,14 +1,14 @@
 import { babel } from '@rollup/plugin-babel';
-import alias from '@rollup/plugin-alias';
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
-import cleaner from 'rollup-plugin-cleaner';
-import { terser } from 'rollup-plugin-terser';
-import minifyHTML from 'rollup-plugin-minify-html-literals';
-import cleanup from 'rollup-plugin-cleanup';
-import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import { name, version } from './package.json';
+import alias from '@rollup/plugin-alias';
+import cleaner from 'rollup-plugin-cleaner';
+import cleanup from 'rollup-plugin-cleanup';
+import commonjs from '@rollup/plugin-commonjs';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
+import minifyHTML from 'rollup-plugin-minify-html-literals';
+import replace from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 
 export default {
 	input: {
