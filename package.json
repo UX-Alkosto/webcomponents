@@ -31,7 +31,7 @@
 		"@rollup/plugin-dynamic-import-vars": "^2.0.0",
 		"@rollup/plugin-json": "^6.1.0",
 		"@rollup/plugin-node-resolve": "^15.3.0",
-		"@rollup/plugin-replace": "^5.0.0",
+		"@rollup/plugin-replace": "^6.0.1",
 		"eslint": "^9.12.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-import": "^2.25.4",
