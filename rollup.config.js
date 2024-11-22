@@ -5,7 +5,6 @@ import cleaner from 'rollup-plugin-cleaner';
 import cleanup from 'rollup-plugin-cleanup';
 import commonjs from '@rollup/plugin-commonjs';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
-import minifyHTML from 'rollup-plugin-minify-html-literals';
 import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
@@ -37,7 +36,6 @@ export default {
 		}),
 		dynamicImportVars(),
 		resolve(),
-		minifyHTML(),
 		terser({
 			ecma: 2017,
 			module: true,
