@@ -13,7 +13,7 @@
 	"dependencies": {
 		"@glidejs/glide": "^3",
 		"@rollup/plugin-terser": "^0.4.4",
-		"lit": "^2.8.0"
+		"lit": "^2"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7",
