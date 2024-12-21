@@ -1,24 +1,24 @@
 import { LitElement, html } from 'lit';
 import { styles } from './css';
 export class Acordeon extends LitElement {
-	constructor(){
+	constructor() {
 		super();
-		this.open=false;
-		this.title='Escriba un título';
+		this.open = false;
+		this.title = 'Escriba un título';
 	}
 	static get properties() {
 		return {
-			open: {type:String,reflect:true},
-			title: {type:String}
+			open: { type: String, reflect: true },
+			title: { type: String }
 		};
 	}
-	static get styles(){
+	static get styles() {
 		return styles;
 	}
 	firstUpdated() {
 		this.open = isTrueSet(this.getAttribute('open'));
 	}
-	render(){
+	render() {
 		return html`<details ?open="${this.open}">
         <summary>
             <h3>${this.title}</h3>
@@ -31,6 +31,6 @@ export class Acordeon extends LitElement {
 	}
 }
 function isTrueSet(value = '') {
-	if(typeof value !== 'string') return false;
+	if (typeof value !== 'string') return false;
 	return value.toLowerCase() === 'true' && true;
 }
