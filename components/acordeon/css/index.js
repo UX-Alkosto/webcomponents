@@ -1,6 +1,6 @@
-import{css, unsafeCSS} from'lit';
+import { css, unsafeCSS } from 'lit';
 import { common } from '../../common';
-const styles= css`
+const styles = css`
 ::slotted(ul) {
     color: var(--text-color1, #444444);
     font-weight: 300;
@@ -118,4 +118,4 @@ k-icon {
         margin: 0px;
     }
 }`;
-export {styles};
+export { styles };
